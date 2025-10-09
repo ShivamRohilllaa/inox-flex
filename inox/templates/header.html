@@ -1,4 +1,5 @@
-<header class="transparent header-light scroll-light has-topbar">
+{% load static %}
+<header class="header-light scroll-light has-topbar">
     <div id="topbar">
         <div class="container">
             <div class="row">
@@ -30,44 +31,42 @@
                     <div class="de-flex-col">
                         <!-- logo begin -->
                         <div id="logo">
-                            <a href="index.html">
-                                <img class="logo-main" src="images/logo-black.webp" alt="" >
-                                <img class="logo-scroll" src="images/logo-black.webp" alt="" >
-                                <img class="logo-mobile" src="images/logo.webp" alt="" >
+                            <a href="{% url 'homepage' %}">
+                                <img class="logo-main" src="{% static 'images/logo/logo.png' %}" alt="" width="150" height="50" style="object-fit: contain;">
+                                <img class="logo-scroll" src="{% static 'images/logo/logo.png' %}" alt="" width="150" height="50" style="object-fit: contain;">
+                                <img class="logo-mobile" src="{% static 'images/logo/logo.png' %}" alt="" width="150" height="50" style="object-fit: contain;">
                             </a>
                         </div>
                         <!-- logo close -->
                     </div>
                     <div class="de-flex-col header-col-mid">
                         <ul id="mainmenu">
-                            <li><a class="menu-item" href="#">Home</a>
-                            </li>
-                            <li><a class="menu-item" href="#">Services</a>
+                            <li><a class="menu-item" href="{% url 'homepage' %}">Home</a></li>
+                            
+                            <!-- Dynamic Categories with Subcategories -->
+                            {% for category in categories %}
+                            <li><a class="menu-item" href="{% url 'category_detail' slug=category.slug %}">{{ category.name }}</a>
+                                {% if category.subcategories.all %}
                                 <ul>
-                                    <li><a class="menu-item" href="installation.html">Installation</a></li>
-                                    <li><a class="menu-item" href="repair.html">Repair</a></li>
-                                    <li><a class="menu-item" href="maintenance.html">Maintenance</a></li>
-                                    <li><a class="menu-item" href="pricing-plans.html">Pricing Plans</a></li>
-                                    <li><a class="menu-item" href="price-list.html">Price List</a></li>
-                                    <li><a class="menu-item" href="service-area.html">Area We Serve</a></li>
+                                    {% for subcategory in category.subcategories.all %}
+                                    <li><a class="menu-item" href="{% url 'subcategory_detail' category_slug=category.slug subcategory_slug=subcategory.slug %}">{{ subcategory.name }}</a></li>
+                                    {% endfor %}
+                                    <!-- Show all products in this category -->
+                                    <li><a class="menu-item" href="{% url 'category_detail' slug=category.slug %}">All {{ category.name }}</a></li>
                                 </ul>
+                                {% endif %}
                             </li>
-                            <li><a class="menu-item" href="about.html">About Us</a></li>
-                            <li><a class="menu-item" href="projects.html">Projects</a></li>
-                            <li><a class="menu-item" href="products.html">Products</a>
-                                <ul>
-                                    <li><a class="menu-item" href="products.html">All Products</a></li>
-                                    <li><a class="menu-item" href="product-details-new.html">Product Details New</a></li>
-                                    <li><a class="menu-item" href="product-details.html">Product Details Simple</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="menu-item" href="blog.html">Blog</a></li>
-                            <li><a class="menu-item" href="contact.html">Contact</a></li>
+                            {% endfor %}
+                            
+                            <!-- Static Menu Items -->
+                            <li><a class="menu-item" href="{% url 'product_list' %}">Our Products</a></li>
+                            <li><a class="menu-item" href="{% url 'about' %}">About Us</a></li>
+                            <li><a class="menu-item" href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="de-flex-col">
                         <div class="menu_side_area">          
-                            <a href="contact.html" class="btn-main bg-color-2">Schedule Now</a>
+                            <a href="{% url 'contact' %}" class="btn-main bg-color-2">E-Catalogue</a>
                             <span id="menu-btn"></span>
                         </div>
                     </div>
