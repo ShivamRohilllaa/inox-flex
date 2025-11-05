@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.html" %}
+
+<body>
+    <div id="wrapper">
+        <div class="float-text show-on-scroll">
+            <span><a href="#">Scroll to top</a></span>
+        </div>
+        <div class="scrollbar-v show-on-scroll"></div>
+        
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+
+        <!-- header begin -->
+        {% include "header.html" %}
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="subheader" class="jarallax text-light">
+                <img src="{% static "images/background/8.webp" %}" class="jarallax-img" alt="">
+                <div class="container relative z-index-1000">
+                    <div class="container relative z-index-1000">
+                        <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="subtitle s2 bg-color text-light wow fadeInUp mb-2">Legal</div>
+                            <h1>Terms &amp; Conditions</h1>
+                            <ul class="crumb">
+                                <li><a href="{% url 'homepage' %}">Home</a></li>
+                                <li class="active">Terms &amp; Conditions</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <div class="fs-20 fw-600 no-bottom sm-hide">Hoses and Pipe & Pipe Fittings</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="de-overlay"></div>
+            </section>
+            <!-- section close -->
+
+            <div class="bg-color relative z-index-1000 mt-40 mb40">
+                <div class="border-white-6 text-center bg-color text-white w-84px h-80px p-3 circle absolute abs-center sm-hide" alt="">
+                    <i class="icofont-file-document fs-36"></i>
+                </div>
+            </div>
+
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            {% if page_content %}
+                                <h2 class="mb-4">{{ page_content.title }}</h2>
+                                <div class="content-area">
+                                    {{ page_content.content|safe }}
+                                </div>
+                            {% else %}
+                                <h2 class="mb-4">Terms &amp; Conditions</h2>
+                                <div class="content-area">
+                                    <p class="lead">Welcome to Inox Flex. By accessing and using our website, you agree to comply with and be bound by the following terms and conditions.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>1. Introduction</h4>
+                                    <p>These terms and conditions govern your use of our website and services. By using our website, you accept these terms in full. If you disagree with any part of these terms, you must not use our website.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>2. Products and Services</h4>
+                                    <p>We specialize in providing high-quality hoses, pipes, and pipe fittings. All product descriptions, specifications, and prices are subject to change without notice. We reserve the right to limit quantities and discontinue products at any time.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>3. Pricing and Payment</h4>
+                                    <p>All prices displayed on our website are in Indian Rupees (INR) and are subject to applicable taxes. We accept various payment methods as indicated during checkout. Payment must be received in full before processing your order.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>4. Orders and Delivery</h4>
+                                    <p>All orders are subject to acceptance and availability. We will make every effort to deliver products within the estimated timeframe, but delivery times are not guaranteed. Risk of loss and title for products pass to you upon delivery.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>5. Returns and Refunds</h4>
+                                    <p>Products may be returned within 7 days of receipt if they are defective or not as described. Returns must be in original condition with all packaging. Refunds will be processed within 10 business days of receiving the returned product.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>6. Warranty</h4>
+                                    <p>Our products come with standard manufacturer warranties. We are not responsible for any indirect, incidental, or consequential damages arising from the use of our products. Our liability is limited to the purchase price of the product.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>7. Intellectual Property</h4>
+                                    <p>All content on this website, including text, graphics, logos, images, and software, is the property of Inox Flex or its content suppliers and is protected by copyright and intellectual property laws.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>8. User Conduct</h4>
+                                    <p>You agree not to use our website for any unlawful purpose or in any way that could damage, disable, or impair the website. You must not attempt to gain unauthorized access to our systems or networks.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>9. Privacy</h4>
+                                    <p>Your use of our website is also governed by our Privacy Policy. Please review our Privacy Policy to understand how we collect, use, and protect your personal information.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>10. Limitation of Liability</h4>
+                                    <p>To the maximum extent permitted by law, Inox Flex shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our website or products.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>11. Changes to Terms</h4>
+                                    <p>We reserve the right to modify these terms and conditions at any time. Changes will be effective immediately upon posting to the website. Your continued use of the website following any changes constitutes acceptance of those changes.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>12. Governing Law</h4>
+                                    <p>These terms and conditions are governed by and construed in accordance with the laws of India. Any disputes relating to these terms shall be subject to the exclusive jurisdiction of the courts of Haryana, India.</p>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <h4>13. Contact Information</h4>
+                                    <p>If you have any questions about these Terms & Conditions, please contact us:</p>
+                                    <ul class="list-style-1">
+                                        <li><i class="icofont-phone me-2 id-color-2"></i> <a href="tel:+918750971212">+91 8750971212</a></li>
+                                        <li><i class="icofont-envelope me-2 id-color-2"></i> <a href="mailto:inoxflex10@gmail.com">inoxflex10@gmail.com</a></li>
+                                        <li><i class="icofont-location-pin me-2 id-color-2"></i> 417/21, Nehru Park, Old DSP Street, Bahadurgarh</li>
+                                    </ul>
+                                    
+                                    <div class="spacer-single"></div>
+                                    
+                                    <p><strong>Last Updated:</strong> January 2025</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
+        </div>
+        <!-- content close -->
+        <!-- footer begin -->
+        {% include "footer.html" %}
+        <!-- footer close -->
+    </div>
+    
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="{% static "js/plugins.js" %}"></script>
+    <script src="{% static "js/designesia.js" %}"></script>
+
+    <style>
+        .content-area {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .content-area h4 {
+            color: var(--color-2, #ff6b35);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .content-area p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .content-area .lead {
+            font-size: 18px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .content-area ul.list-style-1 {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-area ul.list-style-1 li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .content-area ul.list-style-1 li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-2, #ff6b35);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .content-area a {
+            color: var(--color-2, #ff6b35);
+            text-decoration: none;
+        }
+        
+        .content-area a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</body>
+
+</html>
+

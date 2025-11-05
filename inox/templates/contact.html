@@ -30,7 +30,7 @@
                             <div class="subtitle s2 bg-color text-light wow fadeInUp mb-2">Our Service</div>
                             <h1>Get In Touch</h1>
                             <ul class="crumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li class="active">Contact Us</li>
                             </ul>
                         </div>
@@ -58,28 +58,29 @@
 
                             
                             <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="">
+                                {% csrf_token %}
                                 <div class="row gx-4">
                                     <div class="col-lg-6 col-md-6 mb10">
                                         <div class="field-set">
-                                            <span class="d-label">Name</span>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
+                                            <span class="d-label">First Name</span>
+                                            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Your First Name" required>
+                                        </div>
+
+                                        <div class="field-set">
+                                            <span class="d-label">Last Name (Optional)</span>
+                                            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Your Last Name">
                                         </div>
 
                                         <div class="field-set">
                                             <span class="d-label">Email</span>
-                                            <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" required>
-                                        </div>
-
-                                        <div class="field-set">
-                                            <span class="d-label">Phone</span>
-                                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
                                         </div>
                                     </div>
                                     
                                     <div class="col-lg-6 col-md-6">
                                         <div class="field-set mb20">
                                             <span class="d-label">Message</span>
-                                            <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
+                                            <textarea name="description" id="description" class="form-control" placeholder="Your Message" required></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -88,13 +89,6 @@
                                 
                                 <div id='submit' class="mt20">
                                     <input type='submit' id='send_message' value='Send Message' class="btn-main">
-                                </div>
-
-                                <div id="success_message" class='success'>
-                                    Your message has been sent successfully. Refresh this page if you want to send more messages.
-                                </div>
-                                <div id="error_message" class='error'>
-                                    Sorry there was an error sending your form.
                                 </div>
                             </form>
 
@@ -117,12 +111,12 @@
                             <div class="spacer-single"></div>
 
                             <div class="fw-bold text-dark"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                            inoxflex10@gmail.com
+                            <a href="mailto:inoxflex10@gmail.com" class="text-decoration-none">inoxflex10@gmail.com</a>
 
                             <div class="spacer-single"></div>
 
                             <div class="fw-bold text-dark"><i class="icofont-phone me-2 id-color-2"></i>Call Us Directly</div>
-                            +91 8750971212
+                            <a href="tel:+918750971212" class="text-decoration-none">+91-8750971212</a>
 
                             <div class="spacer-single"></div>
                         </div>
@@ -132,6 +126,116 @@
 
         </div>
         <!-- content close -->
+        
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center py-4">
+                        <div class="mb-4">
+                            <i class="icofont-check-circled" style="font-size: 80px; color: #28a745;"></i>
+                        </div>
+                        <h3 class="mb-3">Message Sent Successfully!</h3>
+                        <p class="text-muted">Thank you for contacting us!</p>
+                        <p class="text-muted mb-0">
+                            <i class="icofont-brand-whatsapp me-2" style="color: #25D366; font-size: 24px;"></i>
+                            <strong>Redirecting you to WhatsApp...</strong>
+                        </p>
+                    </div>
+                    <div class="modal-footer border-0 justify-content-center pb-4">
+                        <button type="button" class="btn btn-main" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center py-4">
+                        <div class="mb-4">
+                            <i class="icofont-close-circled" style="font-size: 80px; color: #dc3545;"></i>
+                        </div>
+                        <h3 class="mb-3">Oops! Something Went Wrong</h3>
+                        <p class="text-muted">Sorry, there was an error sending your message. Please try again.</p>
+                    </div>
+                    <div class="modal-footer border-0 justify-content-center pb-4">
+                        <button type="button" class="btn btn-main" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Custom Styles -->
+        <style>
+            /* Modal Responsive Styles */
+            .modal-content {
+                border-radius: 15px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            }
+            
+            .modal-body h3 {
+                font-weight: 600;
+                color: #333;
+            }
+            
+            .modal-body .text-muted {
+                font-size: 16px;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 576px) {
+                .modal-dialog {
+                    margin: 1rem;
+                }
+                
+                .modal-body h3 {
+                    font-size: 1.5rem;
+                }
+                
+                .modal-body i {
+                    font-size: 60px !important;
+                }
+                
+                .modal-body .text-muted {
+                    font-size: 14px;
+                }
+            }
+            
+            /* Submit button loading state */
+            #send_message:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            
+            /* Animation for modal */
+            .modal.fade .modal-dialog {
+                transition: transform 0.3s ease-out;
+            }
+            
+            /* WhatsApp icon pulse animation */
+            @keyframes whatsappPulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
+            
+            .icofont-brand-whatsapp {
+                animation: whatsappPulse 1.5s ease-in-out infinite;
+                display: inline-block;
+            }
+        </style>
+        
         <!-- footer begin -->
         {% include "footer.html" %}
         <!-- footer close -->
@@ -141,7 +245,94 @@
     ================================================== -->
     <script src="{% static "js/plugins.js" %}"></script>
     <script src="{% static "js/designesia.js" %}"></script>
-    <script src="{% static "js/validation-contact.js" %}"></script>
+    
+    <script>
+        // Check for Django messages and show modal
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    successModal.show();
+                    // Reset form on success
+                    document.getElementById('contact_form').reset();
+                {% elif message.tags == 'error' %}
+                    var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                    errorModal.show();
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        // Handle form submission with AJAX for better UX
+        document.getElementById('contact_form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var form = this;
+            var formData = new FormData(form);
+            var submitBtn = document.getElementById('send_message');
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.value = 'Sending...';
+            
+            fetch(form.action || window.location.href, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.value = 'Send Message';
+                
+                if (data.success) {
+                    // Show success modal
+                    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    successModal.show();
+                    // Reset form
+                    form.reset();
+                    
+                    // Prepare WhatsApp message
+                    if (data.form_data) {
+                        var fullName = data.form_data.first_name;
+                        if (data.form_data.last_name) {
+                            fullName += ' ' + data.form_data.last_name;
+                        }
+                        
+                        var whatsappMessage = 'Hello, I am ' + fullName + '.\n\n';
+                        whatsappMessage += 'Email: ' + data.form_data.email + '\n\n';
+                        whatsappMessage += 'Message: ' + data.form_data.description;
+                        
+                        // WhatsApp business number (using the contact number from the page)
+                        var whatsappNumber = '918750971212'; // +91-8750971212 without spaces/hyphens
+                        
+                        // Create WhatsApp URL
+                        var whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(whatsappMessage);
+                        
+                        // Redirect to WhatsApp after 2 seconds (let user see the success modal first)
+                        setTimeout(function() {
+                            window.open(whatsappURL, '_blank');
+                        }, 2000);
+                    }
+                } else {
+                    // Show error modal
+                    var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                    errorModal.show();
+                }
+            })
+            .catch(error => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.value = 'Send Message';
+                
+                // Show error modal
+                var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                errorModal.show();
+            });
+        });
+    </script>
 
 </body>
 

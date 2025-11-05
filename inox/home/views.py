@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import JsonResponse
 from .models import Category, Product, SubCategory, Contact, PageContent
 from .forms import ContactForm
 
@@ -68,10 +69,10 @@ def product_list(request):
     if category_filter:
         products = products.filter(category__slug=category_filter)
     
-    # Pagination
-    paginator = Paginator(products, 12)
-    page_number = request.GET.get('page')
-    products = paginator.get_page(page_number)
+    # No pagination needed for now, show all products
+    # paginator = Paginator(products, 12)
+    # page_number = request.GET.get('page')
+    # products = paginator.get_page(page_number)
     
     context = {
         'products': products,
@@ -79,7 +80,7 @@ def product_list(request):
         'search_query': search_query,
         'category_filter': category_filter,
     }
-    return render(request, 'products/list.html', context)
+    return render(request, 'products.html', context)
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, status=True)
@@ -92,15 +93,45 @@ def product_detail(request, slug):
         'product': product,
         'related_products': related_products,
     }
-    return render(request, 'products/detail.html', context)
+    return render(request, 'product-details.html', context)
 
 def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact = form.save()
-            messages.success(request, 'Your message has been sent successfully! We will get back to you soon.')
-            return redirect('contact')
+            form.save()
+            
+            # Check if it's an AJAX request
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                # Prepare data for WhatsApp message
+                first_name = form.cleaned_data.get('first_name', '')
+                last_name = form.cleaned_data.get('last_name', '')
+                email = form.cleaned_data.get('email', '')
+                description = form.cleaned_data.get('description', '')
+                
+                return JsonResponse({
+                    'success': True,
+                    'message': 'Your message has been sent successfully! We will get back to you soon.',
+                    'form_data': {
+                        'first_name': first_name,
+                        'last_name': last_name,
+                        'email': email,
+                        'description': description
+                    }
+                })
+            else:
+                messages.success(request, 'Your message has been sent successfully! We will get back to you soon.')
+                return redirect('contact')
+        else:
+            # Handle form errors for AJAX requests
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({
+                    'success': False,
+                    'message': 'Please correct the errors in the form.',
+                    'errors': form.errors
+                })
+            else:
+                messages.error(request, 'Please correct the errors in the form.')
     else:
         form = ContactForm()
     

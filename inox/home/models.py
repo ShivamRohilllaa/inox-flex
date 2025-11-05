@@ -68,7 +68,7 @@ class Contact(models.Model):
     ]
     
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField()
     description = RichTextField(help_text="Describe your inquiry or requirements")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
@@ -82,7 +82,9 @@ class Contact(models.Model):
     
     @property
     def full_name(self):
-        return f"{self.first_name} {self.last_name}"
+        if self.last_name:
+            return f"{self.first_name} {self.last_name}"
+        return self.first_name
     
     def __str__(self):
         return f"{self.full_name} - {self.email}"

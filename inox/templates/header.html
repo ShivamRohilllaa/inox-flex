@@ -6,8 +6,8 @@
                 <div class="col-lg-12">
                     <div class="d-flex justify-content-between xs-hide">
                         <div class="header-widget d-flex">
-                            <div class="topbar-widget"><a href="#"><i class="icofont-phone"></i>+91 88149 05509</a></div>
-                            <div class="topbar-widget"><a href="#"><i class="icofont-envelope"></i>inoxflex10@gmail.com</a></div>
+                            <div class="topbar-widget"><a href="tel:+918814905509"><i class="icofont-phone"></i>+91 88149 05509</a></div>
+                            <div class="topbar-widget"><a href="mailto:inoxflex10@gmail.com"><i class="icofont-envelope"></i>inoxflex10@gmail.com</a></div>
                             <div class="topbar-widget"><a href="#"><i class="icofont-wall-clock"></i>Mon - Sat 9AM - 7PM</a></div>
                         </div>
 
@@ -75,3 +75,24 @@
         </div>
     </div>
 </header>
+
+<style>
+    /* Header Topbar Clickable Links Hover Effects */
+    .topbar-widget a[href^="tel"],
+    .topbar-widget a[href^="mailto"] {
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .topbar-widget a[href^="tel"]:hover,
+    .topbar-widget a[href^="mailto"]:hover {
+        color: var(--color-2, #4A9EFF) !important;
+        transform: translateY(-2px);
+    }
+    
+    .topbar-widget a[href^="tel"]:hover i,
+    .topbar-widget a[href^="mailto"]:hover i {
+        transform: scale(1.1);
+        display: inline-block;
+    }
+</style>

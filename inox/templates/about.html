@@ -22,14 +22,14 @@
             <div id="top"></div>
             <!-- section begin -->
             <section id="subheader" class="jarallax text-light">
-                <img src="images/background/1.webp" class="jarallax-img" alt="">
+                <img src="{% static 'images/background/1.webp' %}" class="jarallax-img" alt="">
                 <div class="container relative z-index-1000">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="subtitle s2 bg-color text-light wow fadeInUp mb-2">Our Service</div>
                             <h1>About Us</h1>
                             <ul class="crumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li class="active">About Us</li>
                             </ul>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="col-lg-6">
                             <div class="row g-4">
                                 <div class="col-6">
-                                    <img src="images/misc/9.webp" class="img-fluid rounded-10 mb-4 wow zoomIn" alt="">
+                                    <img src="{% static 'images/misc/9.webp' %}" class="img-fluid rounded-10 mb-4 wow zoomIn" alt="">
                                     <div class="col-12 text-center">
                                         <div class="bg-color-2 text-light px-4 pt30 pb10 rounded-10">
                                             <div class="de_count wow fadeInUp">
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="images/misc/8.webp" class="img-fluid rounded-10 mt-4 wow zoomIn" alt="">
+                                    <img src="{% static 'images/misc/8.webp' %}" class="img-fluid rounded-10 mt-4 wow zoomIn" alt="">
                                 </div>
                             </div>
                         </div>
@@ -115,59 +115,29 @@
                                         <div class="spacer-single"></div>
                                     </div>
                                 </div>
-                                <div class="row g-4">
-                                    <div class="col-lg-3">
-                                        <img src="images/team/1.webp" class="img-fluid rounded-10px" alt="">
-                                        <div class="p-3 text-center
-                                        ">
-                                            <h4 class="mb-0">Jeffery Mussman</h4>
-                                            <p class="mb-2">Founder &amp;  CEO</p>
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <img src="{% static 'images/team/1.webp' %}" class="img-fluid rounded-10px" alt="Harish Rawat">
+                                        <div class="p-3 text-center">
+                                            <h4 class="mb-0">Harish Rawat</h4>
+                                            <p class="mb-2">Founder &amp; Director</p>
                                             <div class="social-icons">
                                                 <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
                                                 <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-linkedin-in"></i></a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-3">
-                                        <img src="images/team/2.webp" class="img-fluid rounded-10px" alt="">
-                                        <div class="p-3 text-center
-                                        ">
-                                            <h4 class="mb-0">Jeffery Mussman</h4>
-                                            <p class="mb-2">Founder &amp;  CEO</p>
+                                    <div class="col-lg-4 col-md-6">
+                                        <img src="{% static 'images/team/2.webp' %}" class="img-fluid rounded-10px" alt="Shubham Rohilla">
+                                        <div class="p-3 text-center">
+                                            <h4 class="mb-0">Shubham Rohilla</h4>
+                                            <p class="mb-2">CEO</p>
                                             <div class="social-icons">
                                                 <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
                                                 <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-                                        <img src="images/team/3.webp" class="img-fluid rounded-10px" alt="">
-                                        <div class="p-3 text-center
-                                        ">
-                                            <h4 class="mb-0">Jeffery Mussman</h4>
-                                            <p class="mb-2">Founder &amp;  CEO</p>
-                                            <div class="social-icons">
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3">
-                                        <img src="images/team/4.webp" class="img-fluid rounded-10px" alt="">
-                                        <div class="p-3 text-center
-                                        ">
-                                            <h4 class="mb-0">Jeffery Mussman</h4>
-                                            <p class="mb-2">Founder &amp;  CEO</p>
-                                            <div class="social-icons">
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-instagram"></i></a>
+                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-linkedin-in"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -184,31 +154,31 @@
                         <div class="col-lg-6">
                             <div class="mb-2 text-center">
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay=".0s">
-                                    <img src="images/logo/1.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/1.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay=".2s">
-                                    <img src="images/logo/2.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/2.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
 
                                 <div class="mb-2 sm-hide"></div>
 
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay=".4s">
-                                    <img src="images/logo/3.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/3.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay=".6s">
-                                    <img src="images/logo/4.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/4.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay=".8s">
-                                    <img src="images/logo/5.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/5.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
 
                                 <div class="mb-2 sm-hide"></div>
 
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay="1s">
-                                    <img src="images/logo/6.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/6.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
                                 <div class="bg-color-3 inline-block w-25 p-3 py-4 rounded-10px m-2 wow fadeInUp" data-wow-delay="1.2s">
-                                    <img src="images/logo/1.webp" class="img-fluid">
+                                    <img src="{% static 'images/logo/1.webp' %}" class="img-fluid" alt="Partner Brand">
                                 </div>
                             </div>
                         </div>

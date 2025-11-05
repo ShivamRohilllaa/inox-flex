@@ -85,7 +85,7 @@
                                                     </h2>
                                                     <p class="slider-teaser">Precision-engineered Buttweld Fittings, Flanges, and Connectors built to endure the toughest environments.</p>
                                                     <div class="spacer-10"></div>
-                                                    <a class="btn-main mb10" href="contact.html">Discover Products</a>
+                                                    <a class="btn-main mb10" href="{% url 'contact' %}">Get a Quote</a> 
 
                                                     {% comment %} <div class="row mt-3 slider-extra">
                                                         <div class="col-3">
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="col-lg-3 text-lg-end text-start">
-                            <a class="btn-main bg-color-2" href="contact.html">Get a Quote</a>
+                            <a class="btn-main bg-color-2" href="{% url 'contact' %}">Get a Quote</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,26 @@
                             <p class="lead wow fadeInUp">
                                 We design and manufacture high-quality stainless steel hoses, pipes, and fittings that ensure durability, safety, and uninterrupted flow across every industrial application.</p>
                         </div>
-                        
+
+                        <!-- Product Tabs -->
+                        <div class="col-lg-12">
+                            <div class="product-tabs-wrapper text-center mb-4">
+                                <div class="product-tabs">
+                                    <button class="product-tab-btn active" data-tab="hoses">
+                                        <i class="icofont-water-drop me-2"></i>
+                                        Hoses
+                                    </button>
+                                    <button class="product-tab-btn" data-tab="pipes">
+                                        <i class="icofont-tool-box me-2"></i>
+                                        Pipes & Fittings
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hoses Tab Content -->
+                        <div class="product-tab-content active" id="hoses-content">
+                        <div class="row g-4">
                         <div class="col-lg-4 col-md-6">
                             <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
                                 <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
@@ -229,17 +248,116 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
                                 <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>PolarAir</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
+                                    <h4>Stainless Steel Corrugated Hoses</h4>
+                                    <p>High-quality corrugated hoses designed for extreme pressure and temperature applications. Available in SS 304, 316, 316L with single or double wire braiding.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="">
+                                   <h4>Corrugated Hoses</h4>
+                               </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        <!-- End Hoses Tab Content -->
+
+                        <!-- Pipes Tab Content -->
+                        <div class="product-tab-content" id="pipes-content">
+                        <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Stainless Steel Pipes</h4>
+                                    <p>Premium quality seamless and welded pipes in grades 304, 316, 316L. Available in various schedules and dimensions for industrial applications.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/2.webp' %}" class="w-80" alt="">
+                                   <h4>SS Pipes</h4>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Buttweld Fittings</h4>
+                                    <p>Precision-engineered buttweld fittings including elbows, tees, reducers, and caps. Manufactured to ASME B16.9 standards.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/3.webp' %}" class="w-80" alt="">
+                                   <h4>Buttweld Fittings</h4>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Flanges</h4>
+                                    <p>High-grade stainless steel flanges - slip-on, weld neck, blind, and threaded. Manufactured as per ASME B16.5 standards.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/4.webp' %}" class="w-80" alt="">
+                                   <h4>SS Flanges</h4>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Expansion Joints</h4>
+                                    <p>Flexible expansion joints designed to absorb thermal expansion, vibration, and misalignment in piping systems.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/5.webp' %}" class="w-80" alt="">
+                                   <h4>Expansion Joints</h4>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Threaded Fittings</h4>
+                                    <p>Complete range of threaded fittings including unions, couplings, elbows, and nipples in various NPT and BSP sizes.</p>
 
                                     <a class="btn-main" href="product-details.html">View Details</a>
                                 </div>
                                <div class="text-center py-3">
                                    <img src="{% static 'images/products/6.webp' %}" class="w-80" alt="">
-                                   <h4>PolarAir</h4>
+                                   <h4>Threaded Fittings</h4>
                                </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                    <h4>Pipe Connectors</h4>
+                                    <p>Specialized pump connectors and flexible metallic connectors for noise reduction and vibration absorption.</p>
+
+                                    <a class="btn-main" href="product-details.html">View Details</a>
+                                </div>
+                               <div class="text-center py-3">
+                                   <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="">
+                                   <h4>Connectors</h4>
+                               </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        <!-- End Pipes Tab Content -->
 
                     </div>
                 </div>
@@ -599,6 +717,183 @@
     <script src="{% static "js/swiper.js" %}"></script>
     <script src="{% static "js/custom-marquee.js" %}"></script>
     <script src="{% static "js/custom-swiper-1.js" %}"></script>
+
+    <!-- Product Tabs CSS & JS -->
+    <style>
+        /* Product Tabs Styling */
+        .product-tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .product-tabs {
+            display: inline-flex;
+            gap: 15px;
+            background: rgba(74, 158, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px;
+            border-radius: 50px;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(74, 158, 255, 0.15);
+        }
+
+        .product-tab-btn {
+            padding: 15px 40px;
+            border: none;
+            background: transparent;
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .product-tab-btn i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-tab-btn:hover {
+            color: #4A9EFF;
+            transform: translateY(-2px);
+        }
+
+        .product-tab-btn:hover i {
+            transform: scale(1.2);
+        }
+
+        .product-tab-btn.active {
+            background: linear-gradient(135deg, #4A9EFF 0%, #6FB4FF 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(74, 158, 255, 0.4), 0 0 30px rgba(74, 158, 255, 0.2);
+        }
+
+        .product-tab-btn.active i {
+            animation: iconBounce 0.6s ease;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* Tab Content */
+        .product-tab-content {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .product-tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-tabs {
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 20px;
+                padding: 8px;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .product-tab-btn {
+                width: 100%;
+                padding: 12px 30px;
+                font-size: 15px;
+            }
+
+            .product-tab-btn i {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-tabs-wrapper {
+                margin: 20px 0;
+            }
+
+            .product-tabs {
+                max-width: 280px;
+                padding: 6px;
+            }
+
+            .product-tab-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .product-tab-btn i {
+                font-size: 16px;
+                margin-right: 8px !important;
+            }
+        }
+
+        /* Glass morphism effect on hover */
+        .product-tabs:hover {
+            background: rgba(74, 158, 255, 0.12);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(74, 158, 255, 0.2);
+        }
+    </style>
+
+    <script>
+        // Product Tabs Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.product-tab-btn');
+            const tabContents = document.querySelectorAll('.product-tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab + '-content').classList.add('active');
+
+                    // Smooth scroll to content (optional)
+                    const contentElement = document.getElementById(targetTab + '-content');
+                    if (contentElement) {
+                        const offset = 100;
+                        const elementPosition = contentElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
