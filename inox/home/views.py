@@ -122,11 +122,11 @@ def page_content_view(request, page_type):
     
     # Map page types to templates
     template_map = {
-        'about_us': 'pages/about.html',
-        'terms_conditions': 'pages/terms.html',
-        'privacy_policy': 'pages/privacy.html',
-        'faq': 'pages/faq.html',
+        'about_us': 'about.html',
+        'terms_conditions': 'terms.html',
+        'privacy_policy': 'privacy.html',
+        'faq': 'faq.html',
     }
     
-    template = template_map.get(page_type, 'pages/default.html')
+    template = template_map.get(page_type, 'default.html')
     return render(request, template, context)

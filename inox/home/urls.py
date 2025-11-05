@@ -9,7 +9,7 @@ urlpatterns = [
     
     # Category URLs
     path('categories/', views.category_list, name='category_list'),
-    path('<slug:slug>/', views.category_detail, name='category_detail'),
+    path('cat/<slug:slug>/', views.category_detail, name='category_detail'),
     
     # SubCategory URLs
     path('<slug:category_slug>/<slug:subcategory_slug>/', views.subcategory_detail, name='subcategory_detail'),
