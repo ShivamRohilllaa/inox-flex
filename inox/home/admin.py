@@ -23,6 +23,22 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ['price', 'status']
     raw_id_fields = ['category']
     prepopulated_fields = {'slug': ('name',)}
+    fieldsets = (
+        ('Product Information', {
+            'fields': ('name', 'slug', 'category', 'price', 'status')
+        }),
+        ('Description', {
+            'fields': ('description',)
+        }),
+        ('Images', {
+            'fields': ('image', 'image_url'),
+            'description': 'Upload an image OR provide an image URL (image upload takes priority)'
+        }),
+        ('Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
 
 @admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):

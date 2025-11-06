@@ -51,8 +51,6 @@
                                     {% for subcategory in category.subcategories.all %}
                                     <li><a class="menu-item" href="{% url 'subcategory_detail' category_slug=category.slug subcategory_slug=subcategory.slug %}">{{ subcategory.name }}</a></li>
                                     {% endfor %}
-                                    <!-- Show all products in this category -->
-                                    <li><a class="menu-item" href="{% url 'category_detail' slug=category.slug %}">All {{ category.name }}</a></li>
                                 </ul>
                                 {% endif %}
                             </li>

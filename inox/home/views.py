@@ -82,8 +82,13 @@ def product_list(request):
     }
     return render(request, 'products.html', context)
 
-def product_detail(request, slug):
-    product = get_object_or_404(Product, slug=slug, status=True)
+def product_detail(request, category_slug, product_slug):
+    product = get_object_or_404(
+        Product, 
+        slug=product_slug, 
+        category__slug=category_slug,
+        status=True
+    )
     related_products = Product.objects.filter(
         category=product.category, 
         status=True

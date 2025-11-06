@@ -26,15 +26,17 @@
                 <div class="container relative z-index-1000">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div class="subtitle s2 bg-color text-light wow fadeInUp mb-2">Discover</div>
-                            <h1>Products</h1>
+                            <div class="subtitle s2 bg-color text-light wow fadeInUp mb-2">Subcategory</div>
+                            <h1>{{ subcategory.name }}</h1>
                             <ul class="crumb">
                                 <li><a href="{% url 'homepage' %}">Home</a></li>
-                                <li class="active">Products</li>
+                                <li><a href="{% url 'product_list' %}">Products</a></li>
+                                <li><a href="{% url 'category_detail' slug=subcategory.category.slug %}">{{ subcategory.category.name }}</a></li>
+                                <li class="active">{{ subcategory.name }}</li>
                             </ul>
                         </div>
                         <div class="col-lg-6 text-lg-end">
-                            <div class="fs-20 fw-600 no-bottom sm-hide">Hoses and Pipe & Pipe Fittings</div>
+                            <div class="fs-20 fw-600 no-bottom sm-hide">{{ subcategory.category.name }}</div>
                         </div>
                     </div>
                 </div>
@@ -43,15 +45,42 @@
             <!-- section close -->
 
             <div class="bg-color relative z-index-1000 mt-40 mb40">
-                <div class="border-white-6 text-center bg-color text-white w-84px h-80px p-3 circle absolute abs-center sm-hide">
-                    <i class="icofont-image fs-36"></i>
+                <div class="border-white-6 text-center bg-color text-white w-84px h-80px p-3 circle absolute abs-center sm-hide" alt="">
+                    <i class="icofont-tags fs-36"></i>
                 </div>
             </div>
 
-            <section id="section-products">
+            <section>
                 <div class="container">
+                    <!-- Subcategory Description -->
+                    {% if subcategory.description %}
+                    <div class="row mb-5">
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                            <div class="subcategory-description">
+                                {{ subcategory.description|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Category Info Badge -->
+                    <div class="row mb-4">
+                        <div class="col-lg-12">
+                            <div class="d-inline-flex align-items-center bg-color-3 px-4 py-2 rounded-pill">
+                                <i class="icofont-folder-open me-2 id-color-2"></i>
+                                <span>Part of: <a href="{% url 'category_detail' slug=subcategory.category.slug %}" class="fw-bold ms-1 text-decoration-none">{{ subcategory.category.name }}</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products in Subcategory -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="mb-4">{{ subcategory.name }} Products</h3>
+                        </div>
+                    </div>
+
                     <div class="row g-4">
-                        
                         {% if products %}
                             {% for product in products %}
                             <div class="col-lg-4 col-md-6">
@@ -77,14 +106,15 @@
                             </div>
                             {% endfor %}
                         {% else %}
-                            <div class="col-12 text-center">
-                                <h4>No products available at the moment.</h4>
-                                <p>Please check back later.</p>
+                            <div class="col-12 text-center py-5">
+                                <i class="icofont-box fs-48 text-muted mb-3"></i>
+                                <h4>No products available in this subcategory.</h4>
+                                <p class="text-muted">Please check back later or explore other subcategories.</p>
+                                <a href="{% url 'category_detail' slug=subcategory.category.slug %}" class="btn-main mt-3">View {{ subcategory.category.name }}</a>
                             </div>
                         {% endif %}
 
                         <div class="spacer-double"></div>
-
                     </div>
                 </div>
             </section>
@@ -100,5 +130,31 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/designesia.js' %}"></script>
 
+    <style>
+        .subcategory-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .bg-color-3 a {
+            color: var(--color-2, #4A9EFF);
+            transition: all 0.3s ease;
+        }
+
+        .bg-color-3 a:hover {
+            color: var(--color, #333);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .d-inline-flex {
+                display: flex !important;
+                justify-content: center;
+            }
+        }
+    </style>
+
 </body>
 </html>
+

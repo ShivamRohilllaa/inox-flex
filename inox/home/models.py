@@ -27,6 +27,7 @@ class Product(models.Model):
     slug = models.SlugField(blank=True, null=True)
     description = RichTextField(blank=True, null=True)
     image = models.ImageField(upload_to='products/', blank=True, null=True)
+    image_url = models.URLField(max_length=500, blank=True, null=True, help_text="Alternative: Use image URL instead of uploading")
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     status = models.BooleanField(default=True)
@@ -37,6 +38,14 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+    
+    def get_image(self):
+        """Returns image URL - prioritizes uploaded image, then image_url, then default"""
+        if self.image:
+            return self.image.url
+        elif self.image_url:
+            return self.image_url
+        return None
 
     def __str__(self):
         return self.name
