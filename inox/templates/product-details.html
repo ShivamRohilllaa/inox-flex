@@ -52,13 +52,7 @@
 
                         <div class="col-lg-6">
                             <div class="row g-4 relative z-1000 mb-4">
-                                <div class="col-6">
-                                    <div class="bg-color h-100 text-light rounded-10 p-4">
-                                        <div class="fw-bold fs-20">₹{{ product.price }}</div>
-                                        <div class="fs-14">Price</div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="bg-color h-100 text-light rounded-10 p-4">
                                         <div class="fw-bold">{{ product.category.name }}</div>
                                         <div class="fs-14">Category</div>
@@ -75,7 +69,7 @@
                             <div class="spacer-single"></div>
 
                             <a class="btn-main" href="{% url 'contact' %}">Contact Us for Quote</a>
-                            <a class="btn-main bg-color ms-2" href="https://wa.me/918750971212?text=Hi%2C%20I%27m%20interested%20in%20{{ product.name|urlencode }}" target="_blank">
+                            <a class="btn-main bg-color ms-2" href="https://wa.me/{{ site_settings.get_whatsapp_url_number }}?text=Hi%2C%20I%27m%20interested%20in%20{{ product.name|urlencode }}" target="_blank">
                                 <i class="icofont-brand-whatsapp me-2"></i>WhatsApp
                             </a>
                         </div>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, SubCategory, Contact, PageContent
+from .models import Category, Product, SubCategory, Contact, PageContent, SiteSettings
 
 # Register your models here.
 
@@ -96,3 +96,25 @@ class PageContentAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
+
+@admin.register(SiteSettings)
+class SiteSettingsAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        # Only allow one instance
+        return not SiteSettings.objects.exists()
+    
+    def has_delete_permission(self, request, obj=None):
+        # Prevent deletion
+        return False
+    
+    list_display = ['phone_number', 'whatsapp_number', 'email', 'updated_at']
+    fieldsets = (
+        ('Contact Information', {
+            'fields': ('phone_number', 'whatsapp_number', 'email', 'address')
+        }),
+        ('Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+    readonly_fields = ['created_at', 'updated_at']

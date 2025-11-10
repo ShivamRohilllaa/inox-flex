@@ -34,12 +34,11 @@
                         <div class="widget">
                             <h5>Our Products</h5>
                             <ul>
-                                <li><a href="#">Maintenace</a></li>
-                                <li><a href="#">Repairs</a></li>
-                                <li><a href="#">Installation</a></li>
-                                <li><a href="#">Emergency</a></li>
-                                <li><a href="#">Replacements</a></li>
-                                <li><a href="#">Dust Cleaning</a></li>
+                                {% for product in products %}
+                                <li><a href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">{{ product.name }}</a></li>
+                                {% empty %}
+                                <li><a href="{% url 'product_list' %}">View All Products</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

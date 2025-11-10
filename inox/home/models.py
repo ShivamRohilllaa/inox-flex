@@ -122,3 +122,62 @@ class PageContent(models.Model):
     
     def __str__(self):
         return f"{self.get_page_type_display()} - {self.title}"
+
+class SiteSettings(models.Model):
+    """
+    Site-wide settings that can be managed from admin panel
+    Only one instance should exist (singleton pattern)
+    """
+    phone_number = models.CharField(
+        max_length=20, 
+        default="+918750971212",
+        help_text="Phone number for WhatsApp and contact (format: +918750971212)"
+    )
+    whatsapp_number = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True,
+        help_text="WhatsApp number (if different from phone number). Leave blank to use phone_number."
+    )
+    email = models.EmailField(
+        default="inoxflex10@gmail.com",
+        help_text="Contact email address"
+    )
+    address = models.TextField(
+        default="417/21, Nehru Park, Old DSP Street, Bahadurgarh",
+        help_text="Office address"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name = 'Site Settings'
+        verbose_name_plural = 'Site Settings'
+    
+    def save(self, *args, **kwargs):
+        # Ensure only one instance exists
+        self.pk = 1
+        super().save(*args, **kwargs)
+    
+    def delete(self, *args, **kwargs):
+        # Prevent deletion
+        pass
+    
+    @classmethod
+    def load(cls):
+        """Get or create the singleton instance"""
+        obj, _ = cls.objects.get_or_create(pk=1)
+        return obj
+    
+    def get_whatsapp_number(self):
+        """Returns WhatsApp number or phone number if WhatsApp number is not set"""
+        return self.whatsapp_number or self.phone_number
+    
+    def get_whatsapp_url_number(self):
+        """Returns WhatsApp number formatted for URL (without + and spaces)"""
+        number = self.get_whatsapp_number()
+        # Remove + and spaces
+        return number.replace('+', '').replace(' ', '').replace('-', '')
+    
+    def __str__(self):
+        return "Site Settings"
