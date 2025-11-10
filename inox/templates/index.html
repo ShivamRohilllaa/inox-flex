@@ -152,212 +152,81 @@
                         </div>
 
                         <!-- Product Tabs -->
+                        {% if categories %}
                         <div class="col-lg-12">
                             <div class="product-tabs-wrapper text-center mb-4">
                                 <div class="product-tabs">
-                                    <button class="product-tab-btn active" data-tab="hoses">
-                                        <i class="icofont-water-drop me-2"></i>
-                                        Hoses
-                                    </button>
-                                    <button class="product-tab-btn" data-tab="pipes">
+                                    {% for category in categories %}
+                                    <button class="product-tab-btn {% if forloop.first %}active{% endif %}" data-tab="category-{{ category.slug }}">
                                         <i class="icofont-tool-box me-2"></i>
-                                        Pipes & Fittings
+                                        {{ category.name }}
                                     </button>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Hoses Tab Content -->
-                        <div class="product-tab-content active" id="hoses-content">
+                        <!-- Category Tab Content -->
+                        {% for category in categories %}
+                        <div class="product-tab-content {% if forloop.first %}active{% endif %}" id="category-{{ category.slug }}-content">
+                            <div class="row g-4">
+                                {% for product in category.products.all|slice:":6" %}
+                                {% if product.status %}
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                        <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                            <h4>{{ product.name }}</h4>
+                                            <div>{{ product.description|safe|truncatewords_html:30 }}</div>
+                                            <a class="btn-main" href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">View Details</a>
+                                        </div>
+                                       <div class="text-center py-3">
+                                           {% if product.get_image %}
+                                               <img src="{{ product.get_image }}" class="w-80" alt="{{ product.name }}">
+                                           {% else %}
+                                               <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="{{ product.name }}">
+                                           {% endif %}
+                                           <h4>{{ product.name }}</h4>
+                                       </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% empty %}
+                                <div class="col-12 text-center py-5">
+                                    <p class="text-muted">No products available in this category.</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <!-- End Category Tab Content -->
+                        {% endfor %}
+                        {% else %}
+                        <!-- Fallback: Show products without tabs if no categories -->
                         <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>AeroChill</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
+                            {% for product in products %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                    <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
+                                        <h4>{{ product.name }}</h4>
+                                        <div>{{ product.description|safe|truncatewords_html:30 }}</div>
+                                        <a class="btn-main" href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">View Details</a>
+                                    </div>
+                                   <div class="text-center py-3">
+                                       {% if product.get_image %}
+                                           <img src="{{ product.get_image }}" class="w-80" alt="{{ product.name }}">
+                                       {% else %}
+                                           <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="{{ product.name }}">
+                                       {% endif %}
+                                       <h4>{{ product.name }}</h4>
+                                   </div>
                                 </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="">
-                                   <h4>AeroChill</h4>
-                               </div>
                             </div>
-                        </div> 
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>ClimaComfort</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/2.webp' %}" class="w-80" alt="">
-                                   <h4>ClimaComfort</h4>
-                               </div>
+                            {% empty %}
+                            <div class="col-12 text-center py-5">
+                                <p class="text-muted">No products available at the moment.</p>
                             </div>
+                            {% endfor %}
                         </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>AeroChill</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/3.webp' %}" class="w-80" alt="">
-                                   <h4>AeroChill</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>FrostWave</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/4.webp' %}" class="w-80" alt="">
-                                   <h4>FrostWave</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>ZephyrCool</h4>
-                                    <p>Non ullamco magna qui non dolore sit ut proident quis ad ex nisi in esse sed occaecat dolore consectetur tempor nostrud sit laboris in nostrud sed cillum mollit irure excepteur nulla magna cupidatat magna officia eiusmod dolore.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/5.webp' %}" class="w-80" alt="">
-                                   <h4>ZephyrCool</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Stainless Steel Corrugated Hoses</h4>
-                                    <p>High-quality corrugated hoses designed for extreme pressure and temperature applications. Available in SS 304, 316, 316L with single or double wire braiding.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="">
-                                   <h4>Corrugated Hoses</h4>
-                               </div>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                        <!-- End Hoses Tab Content -->
-
-                        <!-- Pipes Tab Content -->
-                        <div class="product-tab-content" id="pipes-content">
-                        <div class="row g-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Stainless Steel Pipes</h4>
-                                    <p>Premium quality seamless and welded pipes in grades 304, 316, 316L. Available in various schedules and dimensions for industrial applications.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/2.webp' %}" class="w-80" alt="">
-                                   <h4>SS Pipes</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Buttweld Fittings</h4>
-                                    <p>Precision-engineered buttweld fittings including elbows, tees, reducers, and caps. Manufactured to ASME B16.9 standards.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/3.webp' %}" class="w-80" alt="">
-                                   <h4>Buttweld Fittings</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Flanges</h4>
-                                    <p>High-grade stainless steel flanges - slip-on, weld neck, blind, and threaded. Manufactured as per ASME B16.5 standards.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/4.webp' %}" class="w-80" alt="">
-                                   <h4>SS Flanges</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Expansion Joints</h4>
-                                    <p>Flexible expansion joints designed to absorb thermal expansion, vibration, and misalignment in piping systems.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/5.webp' %}" class="w-80" alt="">
-                                   <h4>Expansion Joints</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Threaded Fittings</h4>
-                                    <p>Complete range of threaded fittings including unions, couplings, elbows, and nipples in various NPT and BSP sizes.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/6.webp' %}" class="w-80" alt="">
-                                   <h4>Threaded Fittings</h4>
-                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
-                                <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
-                                    <h4>Pipe Connectors</h4>
-                                    <p>Specialized pump connectors and flexible metallic connectors for noise reduction and vibration absorption.</p>
-
-                                    <a class="btn-main" href="product-details.html">View Details</a>
-                                </div>
-                               <div class="text-center py-3">
-                                   <img src="{% static 'images/products/1.webp' %}" class="w-80" alt="">
-                                   <h4>Connectors</h4>
-                               </div>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                        <!-- End Pipes Tab Content -->
+                        {% endif %}
 
                     </div>
                 </div>
@@ -876,11 +745,11 @@
 
                     // Add active class to clicked button and corresponding content
                     this.classList.add('active');
-                    document.getElementById(targetTab + '-content').classList.add('active');
-
-                    // Smooth scroll to content (optional)
                     const contentElement = document.getElementById(targetTab + '-content');
                     if (contentElement) {
+                        contentElement.classList.add('active');
+
+                        // Smooth scroll to content (optional)
                         const offset = 100;
                         const elementPosition = contentElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - offset;

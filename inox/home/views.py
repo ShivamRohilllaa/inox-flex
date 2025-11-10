@@ -1,15 +1,21 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Q, Prefetch
 from django.http import JsonResponse
 from .models import Category, Product, SubCategory, Contact, PageContent
 from .forms import ContactForm
 
 # Create your views here.
 def homepage(request):
+    # Get categories with their active products for the homepage tabs
+    categories = Category.objects.filter(status=True).prefetch_related(
+        Prefetch('products', queryset=Product.objects.filter(status=True))
+    )[:2]
+    # Get all products for fallback display
     products = Product.objects.filter(status=True)[:6]
     context = {
+        'categories': categories,
         'products': products,
     }
     return render(request, 'index.html', context)
