@@ -176,7 +176,7 @@
                                     <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
                                         <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
                                             <h4>{{ product.name }}</h4>
-                                            <div>{{ product.description|safe|truncatewords_html:30 }}</div>
+                                            <div>{{ product.description|safe|truncatewords_html:20 }}</div>
                                             <a class="btn-main" href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">View Details</a>
                                         </div>
                                        <div class="text-center py-3">
@@ -207,7 +207,7 @@
                                 <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
                                     <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
                                         <h4>{{ product.name }}</h4>
-                                        <div>{{ product.description|safe|truncatewords_html:30 }}</div>
+                                        <div>{{ product.description|safe|truncatewords_html:20 }}</div>
                                         <a class="btn-main" href="{% url 'product_detail' category_slug=product.category.slug product_slug=product.slug %}">View Details</a>
                                     </div>
                                    <div class="text-center py-3">
