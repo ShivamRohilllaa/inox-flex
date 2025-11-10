@@ -12,11 +12,15 @@
                         </div>
 
                         <div class="social-icons">
-                            <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                            <a href="#"><i class="fa-brands fa-pinterest fa-lg"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                            {% if site_settings.facebook_url %}
+                            <a href="{{ site_settings.facebook_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                            {% endif %}
+                            {% if site_settings.youtube_url %}
+                            <a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                            {% endif %}
+                            {% if site_settings.instagram_url %}
+                            <a href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -112,6 +112,10 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         ('Contact Information', {
             'fields': ('phone_number', 'whatsapp_number', 'email', 'address')
         }),
+        ('Social Media Links', {
+            'fields': ('facebook_url', 'youtube_url', 'instagram_url', 'twitter_url', 'linkedin_url'),
+            'description': 'Add your social media profile URLs. Leave blank to hide the icon.'
+        }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
             'classes': ('collapse',)
