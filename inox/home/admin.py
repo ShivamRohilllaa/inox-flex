@@ -1,10 +1,11 @@
 from django.contrib import admin
+from unfold.admin import ModelAdmin
 from .models import Category, Product, SubCategory, Contact, PageContent, SiteSettings, TeamMember
 
 # Register your models here.
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(ModelAdmin):
     list_display = ['name', 'slug', 'status', 'created_at', 'updated_at']
     list_filter = ['status', 'created_at', 'updated_at']
     search_fields = ['name', 'slug', 'description', 'seo_title', 'seo_description']
@@ -28,7 +29,7 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ModelAdmin):
     list_display = ['name', 'slug', 'category', 'price', 'status', 'created_at', 'updated_at']
     list_filter = ['category', 'status', 'created_at', 'updated_at', 'price']
     search_fields = ['name', 'slug', 'description', 'category__name', 'seo_title', 'seo_description']
@@ -60,7 +61,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
 @admin.register(SubCategory)
-class SubCategoryAdmin(admin.ModelAdmin):
+class SubCategoryAdmin(ModelAdmin):
     list_display = ['name', 'slug', 'category', 'status', 'created_at', 'updated_at']
     list_filter = ['category', 'status', 'created_at', 'updated_at']
     search_fields = ['name', 'slug', 'description', 'category__name', 'seo_title', 'seo_description']
@@ -85,7 +86,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
     )
 
 @admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
+class ContactAdmin(ModelAdmin):
     list_display = ['full_name', 'email', 'status', 'created_at', 'updated_at']
     list_filter = ['status', 'created_at', 'updated_at']
     search_fields = ['first_name', 'last_name', 'email', 'description']
@@ -106,7 +107,7 @@ class ContactAdmin(admin.ModelAdmin):
     )
 
 @admin.register(PageContent)
-class PageContentAdmin(admin.ModelAdmin):
+class PageContentAdmin(ModelAdmin):
     list_display = ['get_page_type_display', 'title', 'status', 'created_at', 'updated_at']
     list_filter = ['page_type', 'status', 'created_at', 'updated_at']
     search_fields = ['title', 'content', 'seo_title', 'seo_description', 'seo_keywords']
@@ -141,7 +142,7 @@ class PageContentAdmin(admin.ModelAdmin):
     )
 
 @admin.register(SiteSettings)
-class SiteSettingsAdmin(admin.ModelAdmin):
+class SiteSettingsAdmin(ModelAdmin):
     def has_add_permission(self, request):
         # Only allow one instance
         return not SiteSettings.objects.exists()
@@ -176,7 +177,7 @@ class SiteSettingsAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
 
 @admin.register(TeamMember)
-class TeamMemberAdmin(admin.ModelAdmin):
+class TeamMemberAdmin(ModelAdmin):
     list_display = ['full_name', 'role', 'order', 'status', 'created_at']
     list_filter = ['status', 'created_at', 'updated_at']
     search_fields = ['first_name', 'last_name', 'role', 'description']
