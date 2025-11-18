@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q, Prefetch
 from django.http import JsonResponse
-from .models import Category, Product, SubCategory, Contact, PageContent
+from .models import Category, Product, SubCategory, Contact, PageContent, TeamMember
 from .forms import ContactForm
 
 # Create your views here.
@@ -157,9 +157,15 @@ def page_content_view(request, page_type):
     except:
         page_content = None
     
+    # Get team members for about page
+    team_members = None
+    if page_type == 'about_us':
+        team_members = TeamMember.objects.filter(status=True)
+    
     context = {
         'page_content': page_content,
         'page_type': page_type,
+        'team_members': team_members,
     }
     
     # Map page types to templates

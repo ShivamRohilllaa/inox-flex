@@ -4,6 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <!-- Desktop Topbar -->
                     <div class="d-flex justify-content-between xs-hide">
                         <div class="header-widget d-flex">
                             <div class="topbar-widget"><a href="tel:+918814905509"><i class="icofont-phone"></i>+91 88149 05509</a></div>
@@ -11,6 +12,31 @@
                             <div class="topbar-widget"><a href="#"><i class="icofont-wall-clock"></i>Mon - Sat 9AM - 7PM</a></div>
                         </div>
 
+                        <div class="d-flex align-items-center">
+                            <!-- Google Translate -->
+                            <div id="google_translate_element" class="google-translate-wrapper mr-3"></div>
+                            
+                            <!-- Social Icons -->
+                            <div class="social-icons">
+                                {% if site_settings.facebook_url %}
+                                <a href="{{ site_settings.facebook_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                                {% endif %}
+                                {% if site_settings.youtube_url %}
+                                <a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                                {% endif %}
+                                {% if site_settings.instagram_url %}
+                                <a href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Topbar -->
+                    <div class="d-flex justify-content-between align-items-center xs-show">
+                        <div class="d-flex align-items-center">
+                            <!-- Google Translate Mobile -->
+                            <div id="google_translate_element_mobile" class="google-translate-wrapper-mobile"></div>
+                        </div>
                         <div class="social-icons">
                             {% if site_settings.facebook_url %}
                             <a href="{{ site_settings.facebook_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook fa-lg"></i></a>
@@ -71,7 +97,7 @@
                     </div>
                     <div class="de-flex-col">
                         <div class="menu_side_area">          
-                            <a href="{% static 'file/INOX FLEX.pdf' %}" class="btn-main bg-color-2" target="_blank">E-Catalogue</a>
+                            <a href="{% static 'file/INOX FLEX.pdf' %}" class="btn-main bg-color-2 e-catalogue-btn" target="_blank">E-Catalogue</a>
                             <span id="menu-btn"></span>
                         </div>
                     </div>
@@ -151,4 +177,229 @@
             padding: 0px 0;
         }
     }
+
+    /* Google Translate Styling */
+    .google-translate-wrapper {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+
+    .google-translate-wrapper .goog-te-gadget {
+        font-family: inherit !important;
+        font-size: 13px !important;
+        color: #666 !important;
+    }
+
+    .google-translate-wrapper .goog-te-gadget-simple {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 13px !important;
+    }
+
+    .google-translate-wrapper .goog-te-gadget-simple .goog-te-gadget-icon {
+        display: none !important;
+    }
+
+    .google-translate-wrapper .goog-te-gadget-simple .goog-te-gadget-simple-text {
+        color: #666 !important;
+        font-size: 13px !important;
+        padding-right: 5px !important;
+    }
+
+    .google-translate-wrapper .goog-te-gadget-simple .goog-te-gadget-simple-text span {
+        color: #666 !important;
+    }
+
+    .google-translate-wrapper select {
+        background-color: transparent !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        border-radius: 4px !important;
+        padding: 4px 8px !important;
+        color: #666 !important;
+        font-size: 13px !important;
+        cursor: pointer !important;
+        outline: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .google-translate-wrapper select:hover {
+        border-color: var(--color-2, #4A9EFF) !important;
+        color: var(--color-2, #4A9EFF) !important;
+    }
+
+    .google-translate-wrapper select:focus {
+        border-color: var(--color-2, #4A9EFF) !important;
+        box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.1) !important;
+    }
+
+    /* Hide Google Translate branding */
+    .goog-te-banner-frame {
+        display: none !important;
+    }
+
+    body {
+        top: 0 !important;
+    }
+
+    /* Mobile Show/Hide */
+    .xs-show {
+        display: none !important;
+    }
+
+    /* Override CSS file rules that hide topbar and buttons on mobile */
+    @media (max-width: 767px) {
+        /* Override: #topbar { display: none; } from style.css */
+        #topbar {
+            display: block !important;
+        }
+        
+        /* Override: header .btn-main { display: none; } from style.css */
+        header .btn-main.e-catalogue-btn {
+            display: inline-block !important;
+        }
+        
+        .xs-hide {
+            display: none !important;
+        }
+        
+        .xs-show {
+            display: flex !important;
+        }
+        
+        /* E-Catalogue Button Mobile */
+        .e-catalogue-btn {
+            font-size: 12px !important;
+            padding: 8px 12px !important;
+            white-space: nowrap;
+            display: inline-block !important;
+        }
+        
+        .menu_side_area {
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        /* Override: #topbar { display: none; } from style.css for very small screens */
+        #topbar {
+            display: block !important;
+        }
+        
+        /* Override: header .btn-main { display: none; } from style.css */
+        header .btn-main.e-catalogue-btn {
+            display: inline-block !important;
+        }
+        
+        .xs-show {
+            display: flex !important;
+        }
+        
+        .e-catalogue-btn {
+            font-size: 11px !important;
+            padding: 6px 10px !important;
+        }
+    }
+
+    /* Mobile responsive Google Translate */
+    @media (max-width: 768px) {
+        .google-translate-wrapper {
+            margin-bottom: 5px;
+        }
+        
+        .google-translate-wrapper select {
+            font-size: 12px !important;
+            padding: 3px 6px !important;
+        }
+        
+        .google-translate-wrapper-mobile {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .google-translate-wrapper-mobile .goog-te-gadget {
+            font-family: inherit !important;
+            font-size: 11px !important;
+            color: #666 !important;
+        }
+        
+        .google-translate-wrapper-mobile .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            font-size: 11px !important;
+        }
+        
+        .google-translate-wrapper-mobile .goog-te-gadget-simple .goog-te-gadget-icon {
+            display: none !important;
+        }
+        
+        .google-translate-wrapper-mobile select {
+            background-color: transparent !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            border-radius: 4px !important;
+            padding: 3px 6px !important;
+            color: #666 !important;
+            font-size: 11px !important;
+            cursor: pointer !important;
+            outline: none !important;
+        }
+        
+        /* Ensure mobile translate element is visible */
+        #google_translate_element_mobile {
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        #google_translate_element_mobile .goog-te-gadget {
+            display: block !important;
+        }
+    }
 </style>
+
+<script>
+    // Ensure Google Translate initializes for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if we're on mobile
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+        
+        // Initialize mobile translate if needed
+        function initMobileTranslate() {
+            const mobileElement = document.getElementById('google_translate_element_mobile');
+            if (mobileElement && isMobile() && !mobileElement.innerHTML.trim()) {
+                // Wait for Google Translate API to load
+                if (typeof google !== 'undefined' && google.translate) {
+                    try {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            includedLanguages: 'en,hi,es,fr,de,it,pt,ru,ja,ko,zh-CN,ar',
+                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                            autoDisplay: false
+                        }, 'google_translate_element_mobile');
+                    } catch(e) {
+                        console.log('Translate init error:', e);
+                    }
+                } else {
+                    // Retry after a delay if Google Translate hasn't loaded yet
+                    setTimeout(initMobileTranslate, 500);
+                }
+            }
+        }
+        
+        // Initial check
+        initMobileTranslate();
+        
+        // Also check on window resize
+        window.addEventListener('resize', function() {
+            if (isMobile()) {
+                initMobileTranslate();
+            }
+        });
+    });
+</script>

@@ -212,3 +212,48 @@ class SiteSettings(models.Model):
     
     def __str__(self):
         return "Site Settings"
+
+class TeamMember(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, blank=True, null=True)
+    role = models.CharField(max_length=100, help_text="e.g., Founder & Director, CEO")
+    description = models.TextField(
+        help_text="Brief description about the team member"
+    )
+    # Social Media Links
+    facebook_url = models.URLField(max_length=500, blank=True, null=True, help_text="Facebook profile URL")
+    twitter_url = models.URLField(max_length=500, blank=True, null=True, help_text="Twitter/X profile URL")
+    linkedin_url = models.URLField(max_length=500, blank=True, null=True, help_text="LinkedIn profile URL")
+    instagram_url = models.URLField(max_length=500, blank=True, null=True, help_text="Instagram profile URL")
+    order = models.IntegerField(
+        default=0,
+        help_text="Display order (lower numbers appear first)"
+    )
+    status = models.BooleanField(default=True, help_text="Show/hide this team member")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['order', 'first_name']
+        verbose_name = 'Team Member'
+        verbose_name_plural = 'Team Members'
+    
+    @property
+    def full_name(self):
+        if self.last_name:
+            return f"{self.first_name} {self.last_name}"
+        return self.first_name
+    
+    def get_initials(self):
+        """Returns initials from first and last name"""
+        initials = self.first_name[0].upper() if self.first_name else ''
+        if self.last_name:
+            initials += self.last_name[0].upper()
+        else:
+            # If no last name, use second character of first name if available
+            if len(self.first_name) > 1:
+                initials += self.first_name[1].upper()
+        return initials[:2]  # Return max 2 characters
+    
+    def __str__(self):
+        return f"{self.full_name} - {self.role}"

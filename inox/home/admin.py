@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, SubCategory, Contact, PageContent, SiteSettings
+from .models import Category, Product, SubCategory, Contact, PageContent, SiteSettings, TeamMember
 
 # Register your models here.
 
@@ -122,3 +122,25 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         }),
     )
     readonly_fields = ['created_at', 'updated_at']
+
+@admin.register(TeamMember)
+class TeamMemberAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'role', 'order', 'status', 'created_at']
+    list_filter = ['status', 'created_at', 'updated_at']
+    search_fields = ['first_name', 'last_name', 'role', 'description']
+    readonly_fields = ['created_at', 'updated_at']
+    ordering = ['order', 'first_name']
+    list_editable = ['order', 'status']
+    fieldsets = (
+        ('Personal Information', {
+            'fields': ('first_name', 'last_name', 'role', 'description', 'order', 'status')
+        }),
+        ('Social Media Links', {
+            'fields': ('facebook_url', 'twitter_url', 'linkedin_url', 'instagram_url'),
+            'description': 'Add social media profile URLs. Leave blank to hide the icon.'
+        }),
+        ('Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )

@@ -68,7 +68,7 @@
                         <div class="col-lg-6">
                             <div class="row g-4">
                                 <div class="col-6">
-                                    <img src="{% static 'images/misc/9.webp' %}" class="img-fluid rounded-10 mb-4 wow zoomIn" alt="">
+                                    <img src="{% static 'images/hoses/one.png' %}" class="img-fluid rounded-10 mb-4 wow zoomIn" alt="">
                                     <div class="col-12 text-center">
                                         <div class="bg-color-2 text-light px-4 pt30 pb10 rounded-10">
                                             <div class="de_count wow fadeInUp">
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img src="{% static 'images/misc/8.webp' %}" class="img-fluid rounded-10 mt-4 wow zoomIn" alt="">
+                                    <img src="{% static 'images/hoses/pipe.png' %}" class="img-fluid rounded-10 mt-4 wow zoomIn" alt="">
                                 </div>
                             </div>
                         </div>
@@ -101,54 +101,337 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-
-                            <div class="p-5 bg-color text-white rounded-20px">
-                                <div class="row">
-                                    <div class="col-lg-6 offset-lg-3 text-center">
-                                        <div class="bg-color-2 text-light subtitle wow fadeInUp mb-3">Behind the Excellence</div>
-                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Team</h2>
-                                        <p class="lead wow fadeInUp" data-wow-delay=".3s">
-                                            The strength of our company lies in the expertise of our people. Our team of skilled engineers, 
-                                            technicians, and professionals work together with precision, innovation, and dedication to 
-                                            deliver quality you can rely on — every single time.
-                                        </p>
-                                        <div class="spacer-single"></div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-2 text-center mb-5">
+                                    <div class="bg-color-2 text-light subtitle wow fadeInUp mb-3 d-inline-block px-4 py-2 rounded-20px">Behind the Excellence</div>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Team</h2>
+                                    <p class="lead wow fadeInUp" data-wow-delay=".3s">
+                                        The strength of our company lies in the expertise of our people. Our team of skilled engineers, 
+                                        technicians, and professionals work together with precision, innovation, and dedication to 
+                                        deliver quality you can rely on — every single time.
+                                    </p>
                                 </div>
-                                <div class="row g-4 justify-content-center">
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="{% static 'images/team/1.webp' %}" class="img-fluid rounded-10px" alt="Harish Rawat">
-                                        <div class="p-3 text-center">
-                                            <h4 class="mb-0">Harish Rawat</h4>
-                                            <p class="mb-2">Founder &amp; Director</p>
-                                            <div class="social-icons">
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                            
+                            <div class="row g-4 justify-content-center">
+                                {% if team_members %}
+                                    {% for member in team_members %}
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="team-card wow fadeInUp" data-wow-delay=".{{ forloop.counter0|add:2 }}s">
+                                            <div class="team-card-inner">
+                                                <div class="team-avatar">
+                                                    <div class="team-initials">{{ member.get_initials }}</div>
+                                                    <div class="team-icon">
+                                                        <i class="icofont-user-alt-3"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="team-name">{{ member.full_name }}</h3>
+                                                    <p class="team-role">{{ member.role }}</p>
+                                                    <div class="team-divider"></div>
+                                                    <p class="team-description">
+                                                        {{ member.description }}
+                                                    </p>
+                                                    <div class="team-social">
+                                                        {% if member.facebook_url %}
+                                                        <a href="{{ member.facebook_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                                                            <i class="fa-brands fa-facebook-f"></i>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% if member.twitter_url %}
+                                                        <a href="{{ member.twitter_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                                                            <i class="fa-brands fa-x-twitter"></i>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% if member.linkedin_url %}
+                                                        <a href="{{ member.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                                            <i class="fa-brands fa-linkedin-in"></i>
+                                                        </a>
+                                                        {% endif %}
+                                                        {% if member.instagram_url %}
+                                                        <a href="{{ member.instagram_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                                                            <i class="fa-brands fa-instagram"></i>
+                                                        </a>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-4 col-md-6">
-                                        <img src="{% static 'images/team/2.webp' %}" class="img-fluid rounded-10px" alt="Shubham Rohilla">
-                                        <div class="p-3 text-center">
-                                            <h4 class="mb-0">Shubham Rohilla</h4>
-                                            <p class="mb-2">CEO</p>
-                                            <div class="social-icons">
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-facebook-f"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-x-twitter"></i></a>
-                                                <a href="#"><i class="bg-white id-color bg-hover-2 text-hover-white fa-brands fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-12 text-center py-5">
+                                        <p class="text-muted">No team members available at the moment.</p>
                                     </div>
-                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <style>
+                /* Team Section Styles */
+                .team-card {
+                    height: 100%;
+                    margin-bottom: 30px;
+                }
+                
+                .team-card-inner {
+                    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+                    border-radius: 20px;
+                    padding: 40px 30px;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .team-card-inner::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, var(--color-2, #4A9EFF) 0%, var(--color, #ff6b35) 100%);
+                    transform: scaleX(0);
+                    transition: transform 0.4s ease;
+                }
+                
+                .team-card:hover .team-card-inner {
+                    transform: translateY(-10px);
+                    box-shadow: 0 20px 60px rgba(74, 158, 255, 0.2);
+                    border-color: var(--color-2, #4A9EFF);
+                }
+                
+                .team-card:hover .team-card-inner::before {
+                    transform: scaleX(1);
+                }
+                
+                .team-avatar {
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto 25px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                .team-initials {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, var(--color-2, #4A9EFF) 0%, var(--color, #ff6b35) 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 36px;
+                    font-weight: 700;
+                    color: #ffffff;
+                    position: relative;
+                    z-index: 2;
+                    transition: all 0.4s ease;
+                    box-shadow: 0 8px 25px rgba(74, 158, 255, 0.3);
+                }
+                
+                .team-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 48px;
+                    color: rgba(255, 255, 255, 0.2);
+                    z-index: 1;
+                    transition: all 0.4s ease;
+                }
+                
+                .team-card:hover .team-initials {
+                    transform: scale(1.1) rotate(5deg);
+                    box-shadow: 0 12px 35px rgba(74, 158, 255, 0.4);
+                }
+                
+                .team-card:hover .team-icon {
+                    transform: translate(-50%, -50%) scale(1.2);
+                    color: rgba(255, 255, 255, 0.3);
+                }
+                
+                .team-content {
+                    text-align: center;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .team-name {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #333;
+                    margin-bottom: 8px;
+                    transition: color 0.3s ease;
+                }
+                
+                .team-card:hover .team-name {
+                    color: var(--color-2, #4A9EFF);
+                }
+                
+                .team-role {
+                    font-size: 16px;
+                    color: var(--color-2, #4A9EFF);
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                
+                .team-divider {
+                    width: 60px;
+                    height: 3px;
+                    background: linear-gradient(90deg, var(--color-2, #4A9EFF) 0%, var(--color, #ff6b35) 100%);
+                    margin: 0 auto 20px;
+                    border-radius: 2px;
+                    transition: width 0.4s ease;
+                }
+                
+                .team-card:hover .team-divider {
+                    width: 100px;
+                }
+                
+                .team-description {
+                    font-size: 15px;
+                    line-height: 1.7;
+                    color: #666;
+                    margin-bottom: 25px;
+                    flex: 1;
+                }
+                
+                .team-social {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-top: auto;
+                }
+                
+                .social-link {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #f0f0f0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #666;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    font-size: 16px;
+                }
+                
+                .social-link:hover {
+                    background: linear-gradient(135deg, var(--color-2, #4A9EFF) 0%, var(--color, #ff6b35) 100%);
+                    color: #ffffff;
+                    transform: translateY(-3px) scale(1.1);
+                    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
+                }
+                
+                /* Responsive Design */
+                @media (max-width: 992px) {
+                    .team-card-inner {
+                        padding: 35px 25px;
+                    }
+                    
+                    .team-avatar {
+                        width: 100px;
+                        height: 100px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .team-initials {
+                        width: 100px;
+                        height: 100px;
+                        font-size: 32px;
+                    }
+                    
+                    .team-icon {
+                        font-size: 40px;
+                    }
+                    
+                    .team-name {
+                        font-size: 22px;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .team-card {
+                        margin-bottom: 25px;
+                    }
+                    
+                    .team-card-inner {
+                        padding: 30px 20px;
+                    }
+                    
+                    .team-avatar {
+                        width: 90px;
+                        height: 90px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .team-initials {
+                        width: 90px;
+                        height: 90px;
+                        font-size: 28px;
+                    }
+                    
+                    .team-icon {
+                        font-size: 36px;
+                    }
+                    
+                    .team-name {
+                        font-size: 20px;
+                    }
+                    
+                    .team-role {
+                        font-size: 14px;
+                    }
+                    
+                    .team-description {
+                        font-size: 14px;
+                    }
+                    
+                    .social-link {
+                        width: 36px;
+                        height: 36px;
+                        font-size: 14px;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .team-card-inner {
+                        padding: 25px 15px;
+                    }
+                    
+                    .team-avatar {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    
+                    .team-initials {
+                        width: 80px;
+                        height: 80px;
+                        font-size: 24px;
+                    }
+                    
+                    .team-icon {
+                        font-size: 32px;
+                    }
+                }
+            </style>
 
-            <section class="no-top">
+            {% comment %} <section class="no-top">
                 <div class="container">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
@@ -191,7 +474,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> {% endcomment %}
 
             <section class="no-top">
                 <div class="container">

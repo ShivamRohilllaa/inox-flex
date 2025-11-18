@@ -16,5 +16,38 @@
     <link href="{% static "css/coloring.css" %}" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="{% static "css/colors/scheme-01.css" %}" rel="stylesheet" type="text/css" >
+    
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            // Initialize for desktop
+            if (document.getElementById('google_translate_element')) {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,es,fr,de,it,pt,ru,ja,ko,zh-CN,ar',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+            
+            // Initialize for mobile - use longer delay to ensure DOM is ready
+            setTimeout(function() {
+                const mobileElement = document.getElementById('google_translate_element_mobile');
+                if (mobileElement && !mobileElement.querySelector('.goog-te-gadget')) {
+                    try {
+                        new google.translate.TranslateElement({
+                            pageLanguage: 'en',
+                            includedLanguages: 'en,hi,es,fr,de,it,pt,ru,ja,ko,zh-CN,ar',
+                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                            autoDisplay: false
+                        }, 'google_translate_element_mobile');
+                    } catch(e) {
+                        console.log('Mobile translate init error:', e);
+                    }
+                }
+            }, 300);
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </head>
