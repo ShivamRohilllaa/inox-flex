@@ -7,17 +7,31 @@ from .models import Category, Product, SubCategory, Contact, PageContent, SiteSe
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'status', 'created_at', 'updated_at']
     list_filter = ['status', 'created_at', 'updated_at']
-    search_fields = ['name', 'slug', 'description']
+    search_fields = ['name', 'slug', 'description', 'seo_title', 'seo_description']
     readonly_fields = ['created_at', 'updated_at']
     ordering = ['name']
     list_editable = ['status']
     prepopulated_fields = {'slug': ('name',)}
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('name', 'slug', 'description', 'image', 'status')
+        }),
+        ('SEO Settings', {
+            'fields': ('seo_title', 'seo_description', 'seo_keywords', 'og_image'),
+            'classes': ('collapse',),
+            'description': 'Leave blank to auto-generate from name/description'
+        }),
+        ('Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'category', 'price', 'status', 'created_at', 'updated_at']
     list_filter = ['category', 'status', 'created_at', 'updated_at', 'price']
-    search_fields = ['name', 'slug', 'description', 'category__name']
+    search_fields = ['name', 'slug', 'description', 'category__name', 'seo_title', 'seo_description']
     readonly_fields = ['created_at', 'updated_at']
     ordering = ['name']
     list_editable = ['price', 'status']
@@ -34,6 +48,11 @@ class ProductAdmin(admin.ModelAdmin):
             'fields': ('image', 'image_url'),
             'description': 'Upload an image OR provide an image URL (image upload takes priority)'
         }),
+        ('SEO Settings', {
+            'fields': ('seo_title', 'seo_description', 'seo_keywords', 'og_image'),
+            'classes': ('collapse',),
+            'description': 'Leave blank to auto-generate from name/description'
+        }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
             'classes': ('collapse',)
@@ -44,12 +63,26 @@ class ProductAdmin(admin.ModelAdmin):
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'category', 'status', 'created_at', 'updated_at']
     list_filter = ['category', 'status', 'created_at', 'updated_at']
-    search_fields = ['name', 'slug', 'description', 'category__name']
+    search_fields = ['name', 'slug', 'description', 'category__name', 'seo_title', 'seo_description']
     readonly_fields = ['created_at', 'updated_at']
     ordering = ['category', 'name']
     list_editable = ['status']
     raw_id_fields = ['category']
     prepopulated_fields = {'slug': ('name',)}
+    fieldsets = (
+        ('Basic Information', {
+            'fields': ('name', 'slug', 'category', 'description', 'image', 'status')
+        }),
+        ('SEO Settings', {
+            'fields': ('seo_title', 'seo_description', 'seo_keywords', 'og_image'),
+            'classes': ('collapse',),
+            'description': 'Leave blank to auto-generate from name/description'
+        }),
+        ('Timestamps', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -76,7 +109,7 @@ class ContactAdmin(admin.ModelAdmin):
 class PageContentAdmin(admin.ModelAdmin):
     list_display = ['get_page_type_display', 'title', 'status', 'created_at', 'updated_at']
     list_filter = ['page_type', 'status', 'created_at', 'updated_at']
-    search_fields = ['title', 'content', 'meta_description', 'meta_keywords']
+    search_fields = ['title', 'content', 'seo_title', 'seo_description', 'seo_keywords']
     readonly_fields = ['created_at', 'updated_at']
     ordering = ['page_type']
     list_editable = ['status']
@@ -87,9 +120,19 @@ class PageContentAdmin(admin.ModelAdmin):
         ('Content', {
             'fields': ('content',)
         }),
-        ('SEO Settings', {
-            'fields': ('meta_description', 'meta_keywords'),
-            'classes': ('collapse',)
+        ('Basic SEO', {
+            'fields': ('seo_title', 'seo_description', 'seo_keywords'),
+            'description': 'Basic meta tags for search engines'
+        }),
+        ('Open Graph (Facebook, LinkedIn)', {
+            'fields': ('og_title', 'og_description', 'og_image'),
+            'classes': ('collapse',),
+            'description': 'Leave blank to use basic SEO values'
+        }),
+        ('Twitter Card', {
+            'fields': ('twitter_card_type', 'twitter_title', 'twitter_description', 'twitter_image'),
+            'classes': ('collapse',),
+            'description': 'Leave blank to use Open Graph values'
         }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),
@@ -115,6 +158,15 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         ('Social Media Links', {
             'fields': ('facebook_url', 'youtube_url', 'instagram_url', 'twitter_url', 'linkedin_url'),
             'description': 'Add your social media profile URLs. Leave blank to hide the icon.'
+        }),
+        ('Default SEO Settings', {
+            'fields': ('site_name', 'default_seo_title', 'default_seo_description', 'default_seo_keywords'),
+            'description': 'Default SEO values used when pages don\'t have specific SEO settings'
+        }),
+        ('Social Media SEO', {
+            'fields': ('og_image_default', 'twitter_handle'),
+            'classes': ('collapse',),
+            'description': 'Default images and handles for social media sharing'
         }),
         ('Timestamps', {
             'fields': ('created_at', 'updated_at'),

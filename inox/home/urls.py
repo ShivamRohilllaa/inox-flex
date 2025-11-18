@@ -7,6 +7,9 @@ urlpatterns = [
     # Homepage
     path('', views.homepage, name='homepage'),
     
+    # SEO
+    path('robots.txt', views.robots_txt, name='robots_txt'),
+    
     # Static Pages (must come early to avoid conflicts)
     path('contact/', views.contact_view, name='contact'),
     path('about/', views.page_content_view, {'page_type': 'about_us'}, name='about'),
