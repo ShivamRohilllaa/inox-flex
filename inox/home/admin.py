@@ -45,6 +45,10 @@ class ProductAdmin(ModelAdmin):
         ('Description', {
             'fields': ('description',)
         }),
+        ('Specifications & Technical Details', {
+            'fields': ('specifications',),
+            'description': 'Add product specifications, technical details, or table data. You can create HTML tables using the editor.'
+        }),
         ('Images', {
             'fields': ('image', 'image_url'),
             'description': 'Upload an image OR provide an image URL (image upload takes priority)'

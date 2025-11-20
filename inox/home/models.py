@@ -109,6 +109,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(blank=True, null=True)
     description = RichTextField(blank=True, null=True)
+    specifications = RichTextField(blank=True, null=True, help_text="Add product specifications, technical details, or table data here. You can use HTML tables.")
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     image_url = models.URLField(max_length=500, blank=True, null=True, help_text="Alternative: Use image URL instead of uploading")
     price = models.DecimalField(max_digits=10, decimal_places=2)
