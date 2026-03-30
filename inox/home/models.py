@@ -524,7 +524,7 @@ class SiteSettings(models.Model):
         help_text="WhatsApp number (if different from phone number). Leave blank to use phone_number."
     )
     email = models.EmailField(
-        default="inoxflex10@gmail.com",
+        default="info@inoxflex.co.in",
         help_text="Contact email address"
     )
     address = models.TextField(
