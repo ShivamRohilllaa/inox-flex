@@ -514,8 +514,8 @@ class SiteSettings(models.Model):
     """
     phone_number = models.CharField(
         max_length=20, 
-        default="+918750971212",
-        help_text="Phone number for WhatsApp and contact (format: +918750971212)"
+        default="+917015847534",
+        help_text="Phone number for WhatsApp and contact (format: +917015847534)"
     )
     whatsapp_number = models.CharField(
         max_length=20,

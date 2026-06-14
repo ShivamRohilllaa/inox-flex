@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='SiteSettings',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phone_number', models.CharField(default='+918750971212', help_text='Phone number for WhatsApp and contact (format: +918750971212)', max_length=20)),
+                ('phone_number', models.CharField(default='+917015847534', help_text='Phone number for WhatsApp and contact (format: +917015847534)', max_length=20)),
                 ('whatsapp_number', models.CharField(blank=True, help_text='WhatsApp number (if different from phone number). Leave blank to use phone_number.', max_length=20, null=True)),
                 ('email', models.EmailField(default='info@inoxflex.co.in', help_text='Contact email address', max_length=254)),
                 ('address', models.TextField(default='417/21, Nehru Park, Old DSP Street, Bahadurgarh', help_text='Office address')),
