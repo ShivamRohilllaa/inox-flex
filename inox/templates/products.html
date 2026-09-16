@@ -55,7 +55,7 @@
                         {% if products %}
                             {% for product in products %}
                             <div class="col-lg-4 col-md-6">
-                                <div class="bg-light relative hover overflow-hidden rounded-1">
+                                <div class="inox-product-card bg-light relative hover overflow-hidden rounded-1">
                                     <div class="absolute w-100 h-100 padding30 bg-white hover-op-1 hover-mt-40 z-2">
                                         <h4>{{ product.name }}</h4>
                                         <div>{{ product.description|safe|truncatewords_html:30 }}</div>

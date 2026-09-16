@@ -173,7 +173,7 @@
                                 {% for product in category.products.all|slice:":6" %}
                                 {% if product.status %}
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                    <div class="inox-product-card bg-color-3 relative hover overflow-hidden rounded-20px">
                                         <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
                                             <h4>{{ product.name }}</h4>
                                             <div>{{ product.description|safe|truncatewords_html:20 }}</div>
@@ -204,7 +204,7 @@
                         <div class="row g-4">
                             {% for product in products %}
                             <div class="col-lg-4 col-md-6">
-                                <div class="bg-color-3 relative hover overflow-hidden rounded-20px">
+                                <div class="inox-product-card bg-color-3 relative hover overflow-hidden rounded-20px">
                                     <div class="absolute w-100 h-100 padding30 bg-light hover-op-1 hover-mt-40">
                                         <h4>{{ product.name }}</h4>
                                         <div>{{ product.description|safe|truncatewords_html:20 }}</div>
@@ -275,7 +275,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/engineer.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-helmet-safety feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Expert Engineering</h4>
                                             <p class="mb-0">Our team designs every hose, pipe, and fitting to meet global standards — ensuring strength, flexibility, and flawless performance.</p>
@@ -285,7 +285,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/quality.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-shield-halved feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Uncompromised Quality</h4>
                                             <p class="mb-0">Each product undergoes hydrostatic, bend, and burst testing as per ISO and BS standards before it reaches you.</p>
@@ -295,7 +295,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/material.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-layer-group feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Premium Materials</h4>
                                             <p class="mb-0">We use only high-grade stainless steel — 304, 316, 316L, and 321 — for durability, corrosion resistance, and long life.</p>
@@ -305,7 +305,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/custom.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-sliders feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Custom Solutions</h4>
                                             <p class="mb-0">From flexible assemblies to expansion joints, we manufacture to your exact specifications — no compromises.</p>
@@ -315,7 +315,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/global.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-globe feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Global Reach</h4>
                                             <p class="mb-0">As trusted exporters, our stainless steel hoses and fittings are used by industries around the world.</p>
@@ -325,7 +325,7 @@
             
                                 <div class="item">
                                     <div class="relative">
-                                        <img src="{% static 'images/icons/white/support.webp' %}" class="bg-color w-30 padding15 rounded-10 mb-3" alt="">
+                                        <i class="fa-solid fa-headset feature-icon bg-color rounded-10 mb-3" aria-hidden="true"></i>
                                         <div class="relative">
                                             <h4>Reliable Support</h4>
                                             <p class="mb-0">We’re more than manufacturers — we’re partners. Expect responsive service and technical assistance every step of the way.</p>

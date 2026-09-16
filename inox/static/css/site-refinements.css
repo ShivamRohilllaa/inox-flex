@@ -1,0 +1,110 @@
+/* Consistent product presentation without cropping the product photography. */
+.inox-product-card {
+  height: 100%;
+  border: 1px solid rgba(35, 73, 130, .06);
+}
+.inox-product-card > .text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 24px !important;
+}
+.inox-product-card > .text-center > img {
+  display: block;
+  width: 100% !important;
+  height: 240px;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  border-radius: 8px;
+  margin: 0 0 20px;
+}
+.inox-product-card > .text-center > h4 {
+  width: 100%;
+  min-height: 2.8em;
+  margin: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inox-product-card > .text-center > p {
+  margin: 10px 0 0;
+}
+.inox-product-card > .absolute {
+  overflow-y: auto;
+}
+/* Keep the office caption over the photo only; map stays clear and usable. */
+.office-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.office-photo > img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.office-photo .d-title {
+  bottom: 18px;
+  padding: 0 16px;
+  line-height: 1.4;
+}
+.office-map {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #dce5f2;
+}
+.office-map iframe {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+}
+/* Active section stays visible in both the desktop and mobile menus. */
+header #mainmenu a.menu-item.is-active,
+header.smaller #mainmenu a.menu-item.is-active {
+  color: var(--secondary-color, #678fd5) !important;
+}
+#mainmenu > li > a.menu-item {
+  position: relative;
+}
+#mainmenu > li > a.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 17px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--secondary-color, #678fd5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+#mainmenu > li > a.menu-item.is-active::before,
+#mainmenu > li > a.menu-item:hover::before,
+#mainmenu > li > a.menu-item:focus-visible::before {
+  transform: scaleX(1);
+}
+#mainmenu ul a.menu-item.is-active {
+  background: #edf3fc;
+}
+@media (max-width: 991px) {
+  #mainmenu > li > a.menu-item::before {
+    right: auto;
+    width: 32px;
+    bottom: 4px;
+  }
+}
+@media (max-width: 575px) {
+  .inox-product-card > .text-center { padding: 20px !important; }
+  .inox-product-card > .text-center > img { height: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #mainmenu > li > a.menu-item::before { transition: none; }
+}
+
+.feature-icon { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; font-size: 32px; color: #fff; }

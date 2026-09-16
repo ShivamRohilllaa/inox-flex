@@ -1,0 +1,374 @@
+[
+{
+  "model": "home.category",
+  "pk": 1,
+  "fields": {
+    "name": "Hoses",
+    "slug": "hoses",
+    "description": "",
+    "image": "",
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:06:11.287Z",
+    "updated_at": "2025-10-09T15:06:11.287Z"
+  }
+},
+{
+  "model": "home.category",
+  "pk": 2,
+  "fields": {
+    "name": "Pipe & Pipe Fittings",
+    "slug": "pipe-fittings",
+    "description": "",
+    "image": "",
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:07:04.308Z",
+    "updated_at": "2025-10-09T15:07:04.308Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 1,
+  "fields": {
+    "name": "Stainless steel corrugated flexible hoses",
+    "slug": "stainless-steel-corrugated-flexible-hoses",
+    "description": "<p>Stainless Steel Hose Pipes</p>\r\n\r\n<p>The Stainless Steel Corrugated Hoses are available in stainless steel grades (AISI) 321, 316, 316L, &amp; 304 by forming consolution so that it may conveniently bend while remaining liquid and gas tight. The hoses of specific length as per requirement can be manufactured with the end fittings in Flanged / Threaded types. The Flexible Hose are available in braidings of Stainless Steel wire to take care of external damage and to increase pressure ratings.<br />\r\n<br />\r\n<strong>Flexibility Grades :-</strong><br />\r\n<br />\r\ni) Standard Pitch Tubing with Class &#39;B&#39; flexibility as per BS part -1: 2004 / ISO 10380 : 2003. Common applications include fluid transfer for process industries, oil burners, misalignments.<br />\r\n<br />\r\nii) Fine Pitch Hose (Tubing) with maximum flexibility similar to Class C flexibility of BS part -1: 2004 / ISO 10380 : 2003. These are used for the most ardour flexing or high frequency at high temperature and high pressures. The pitch of the hose can be varied to achieve a range of flexibility and pressure rating as required for various application.<br />\r\n<br />\r\n<br />\r\nAdvantages of Flexible Metal Hose</p>\r\n\r\n<ul>\r\n\t<li>Suitable for wide temperature range (-270&deg;C to 700&deg;C).</li>\r\n\t<li>It compensates for thermal expansion or contraction in piping system.</li>\r\n\t<li>High physical strength.</li>\r\n\t<li>Good corrosion characteristics.</li>\r\n\t<li>Fire resistant.</li>\r\n\t<li>Moisture resistant.</li>\r\n\t<li>Long life.</li>\r\n\t<li>Resistant to abrasion, penetration and damage.</li>\r\n\t<li>Absorbs or dampers vibration and noise from pumps, compressors, engines and similar Equipment.</li>\r\n\t<li>Connects misaligned rigid piping.</li>\r\n\t<li>Connects moving parts of machinery and equipment.</li>\r\n\t<li>Permits a very economical installation against rigid piping in difficult locations.</li>\r\n</ul>\r\n\r\n<p>Testing Facilites..<br />\r\nwe have comprehensive testing facilities as per BS 6501- Part 1 as well as ISO 10380 standards. Following type of test carrying out at our works:</p>\r\n\r\n<ul>\r\n\t<li>Bend Test</li>\r\n\t<li>Flame Test</li>\r\n\t<li>Hydrostatic test</li>\r\n\t<li>Burst test</li>\r\n</ul>",
+    "image": "",
+    "category": 1,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:11:28.601Z",
+    "updated_at": "2025-10-09T15:11:28.601Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Hose End Connections",
+    "slug": "hose-end-connections",
+    "description": "<p>Hose End Connections<br />\r\n&nbsp;</p>\r\n\r\n<p>This Fitting are easy to assemble Possesses Unique locking action by back Formula and Resistant to Vibration and Pressure Pulses, Silver Plated Nuts prevent sizing on Stainless Steel and no torque is transmitted to the tube. It is suitable for high vacuum and Pressure Upto 10,000 Rs.2. They are made of Stainless Steel Tubes SS 316,304,3041,306 and are Available in &#39;116&#39; OD To 2 OD. Carbon steel bite Fittings Comprises Of a Special Ferrule which Grip the Pipe in Position And Perceptibly bites into the Pipes surface to Provide Positive Seal. It is also bowed Slightly in the middle and acts as a Spring which Prevents Loosening of the Joint under Vibration And Strain.Brass Olive Tube Fittings are used In Low Pressure.<br />\r\n<br />\r\n<strong>Functions :-</strong>&nbsp;This Fitting are Available in Swage lock Type, Ermetto Type, Parker Type, Festo Type, Push in Type and Flare Type.<br />\r\n<br />\r\n<strong>Uses :-</strong>&nbsp;Pneumatic Or Hydraulic Installation Air Logic, Systems, Chemical Handling, Centralized Lubrication Systems, Low Pressure Hydraulics, Gas Water And Fluid Lines.</p>",
+    "image": "",
+    "category": 1,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:13:48.853Z",
+    "updated_at": "2025-10-09T15:13:48.853Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Hose Assemblies",
+    "slug": "hose-assemblies",
+    "description": "<p>&nbsp;</p>\r\n\r\n<p>Hose Assemblies<a name=\"hose\"></a></p>\r\n\r\n<p>When the corrugated hose is subjected to pressure, it tends to open axially. The wire braid is provided to prevent elongation caused by the pressure on the hose. This results in manifold increase in the hose&#39;s pressure strength. The braid also provides physical protection against damage to the tube and also dampens secondary vibration movements. The braid is made of Stainless steel wire conforming to AISI 304/316/321.&nbsp;The angles of lay, wire thickness, number of strands are carefully selected to meet the various application requirements. The braid is woven in such a way that line pressure produces braid tension, and correspondingly provides radial and axial constraint prohibiting elongation of inner tubes. Multiple braided assemblies required to accommodate higher pressures, are also available.<br />\r\nLoose braids are also manufactured to meet specific requirements for rubber hoses and other flexible hoses of varied materials. These are tailor-made to meet customer needs.</p>",
+    "image": "",
+    "category": 1,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:14:29.870Z",
+    "updated_at": "2025-10-09T15:14:29.870Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 4,
+  "fields": {
+    "name": "Bellows and Expansion Joints",
+    "slug": "bellows-and-expansion-joints",
+    "description": "<p>Bellows and Expansion Joints</p>\r\n\r\n<p>We manufactured and supplies of&nbsp;<strong>Metal Bellows</strong>&nbsp;In accordance with EJMA Standards, these bellows are manufactured by our professional using fine quality metals and hydraulic process. Available in different sizes, these&nbsp;<strong>Metal Bellows</strong>&nbsp;are generally used in pipeline systems, which connect the pumps and vessels. The design of the folds in metal bellow permits greater axial, lateral, and angular movements. To increase the angular or lateral flexibility, the ties, pivots or other trimmings can be added to a metal bellow. The service life of these devices is determined on the basis of shape, material and degree to which the junction must be able to move, and of course, forces that are more than the designed limits..<br />\r\n<br />\r\n<strong>Features</strong><br />\r\n&nbsp;</p>\r\n\r\n<ul>\r\n\t<li>Capable of absorbing the vibrations developed from pumps, engines and compressors.</li>\r\n\t<li>Increase the service life of a pipeline system</li>\r\n\t<li>Permits greater axial, lateral and angular movements</li>\r\n</ul>\r\n\r\n<p>We design and supply Single Ply as well as Multi-ply bellows membranes and expansion joints in various sizes ranging from 20 mm to 2000-mm nominal diameter. The bellows in sizes of 20 mm to 300 mm are fabricated using the hydraulic process while higher diameter is made using the roll forming.<br />\r\n<br />\r\nUsing these bellows, flanged-end and fused-end expansion joints can be easily and smoothly fabricated. Both universal as well as double expansion joints uses two bellows.</p>\r\n\r\n<p><br />\r\n&nbsp;</p>\r\n\r\n<p><strong>Quality</strong><br />\r\n<br />\r\nOur bellows are designed as per the EJMA Standards, however, we are capable to design these with customization to suit specific customer specifications. We have a standard range of single ply bellows for uses in engine exhaust applications as well as general-purpose and low-pressure applications.<br />\r\n<br />\r\n<strong>Application of Products</strong><br />\r\n<br />\r\nThe quality metal expansion joints supplied by us have found crucial applications in pipeline technology and are used to counterbalance length changes, which generally occur in pipelines due to temperature changes. Besides this, the metal expansion joints are capable of absorbing the vibrations developed from pumps, engines, compressors or turbines. Depending on the problem, the axial, lateral as well as angular movements can be compensated. Metal expansion joints provide cost advantage and increase the service life of a pipeline system.</p>",
+    "image": "",
+    "category": 1,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:15:03.152Z",
+    "updated_at": "2025-10-09T15:15:03.152Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 5,
+  "fields": {
+    "name": "Automotive Exhaust Connectors",
+    "slug": "automotive-exhaust-connectors",
+    "description": "<p>Automotive Exhaust Connectors</p>\r\n\r\n<p>We manufacture and supply&nbsp;<strong>Automotive Exhaust connectors</strong>&nbsp;Made by using single or multiple stainless steel convoluted bellows and external braid with or without braid lines, these connectors are available in various sizes and lengths.&nbsp;<strong>Exhaust Connectors</strong>&nbsp;are widely used by car users for increasing the age of automotive exhaust mufflers and with catalytic convertors to dampen vibrations.<br />\r\n<br />\r\n<strong>Features</strong></p>\r\n\r\n<ul>\r\n\t<li>Sturdy</li>\r\n\t<li>Durable</li>\r\n\t<li>Dimensionally accurate</li>\r\n</ul>\r\n\r\n<p><strong>Further Details</strong><br />\r\n<br />\r\nAutomotive Exhaust Connectors have been developed by great emphasis on research and development. Flexible connectors are in great demand by the users of cars with catalytic convertors to dampen vibrations and for increasing the age of automotive exhaust mufflers. Made from single or multiple stainless steel Convoluted Bellows, external braid with or without braid lines or shrouds, are available in many sizes and lengths.</p>",
+    "image": "",
+    "category": 1,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:15:28.857Z",
+    "updated_at": "2025-10-09T15:15:28.857Z"
+  }
+},
+{
+  "model": "home.subcategory",
+  "pk": 6,
+  "fields": {
+    "name": "Pipe Fittings",
+    "slug": "pipe-fittings",
+    "description": "<p>&nbsp;</p>\r\n\r\n<p><img src=\"https://www.steelhosepipes.com/images/arrow-more.gif\" />&nbsp;&nbsp;Pipe Fittings</p>\r\n\r\n<p><img src=\"https://www.steelhosepipes.com/images/Pipe-Fittings.jpg\" style=\"float:right\" /><br />\r\nPipe fitting is the occupation of installing or repairing piping or tubing systems that convey liquid, gas, and occasionally solid materials. This work involves selecting and preparing pipe or tubing, joining it together by various means, and the location and repair of leaks.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>\r\n\r\n<p><br />\r\n<br />\r\n<br />\r\n&nbsp;</p>\r\n\r\n<table cellpadding=\"0\" cellspacing=\"0\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><img src=\"https://www.steelhosepipes.com/images/book-now-left.gif\" /></td>\r\n\t\t\t<td><a href=\"https://www.steelhosepipes.com/enquiry.php?Query=Pipes%20&amp;%20Pipe%20Fittings\">Request For Quote: Pipes &amp; Pipe Fittings</a></td>\r\n\t\t\t<td><img src=\"https://www.steelhosepipes.com/images/book-now-right.gif\" /></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p><br />\r\n<img src=\"https://www.steelhosepipes.com/images/arrow-more.gif\" />&nbsp;&nbsp;<a name=\"buttweld-fittings\"></a>Buttweld Fittings</p>\r\n\r\n<p><img src=\"https://www.steelhosepipes.com/images/Buttweld-Fittings.jpg\" style=\"float:right\" />We manufacture and design butt weld fittings in various designs and specifications for different requirements of our clients. Manufactured using quality material and sophisticated machines, our range of butt weld fittings is known for its high quality, zero-defects and superior performance.<br />\r\n<br />\r\nWe offer these fittings in various shapes such as elbow, tee, reducer, return bends, stub-ends, cap, collar, cross, insert and more. The company has gained expertise in offering fittings with polish &amp; electro polishing and has the capability to manufacture fittings as per drawings.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>\r\n\r\n<table cellpadding=\"0\" cellspacing=\"0\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><img src=\"https://www.steelhosepipes.com/images/book-now-left.gif\" /></td>\r\n\t\t\t<td><a href=\"https://www.steelhosepipes.com/enquiry.php?Query=Buttweld%20Fittings\">Request For Quote: Buttweld Fittings</a></td>\r\n\t\t\t<td><img src=\"https://www.steelhosepipes.com/images/book-now-right.gif\" /></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p><br />\r\n<img src=\"https://www.steelhosepipes.com/images/arrow-more.gif\" />&nbsp;&nbsp;Flanges<a name=\"flanges\"></a></p>\r\n\r\n<p><img src=\"https://www.steelhosepipes.com/images/Flanges.jpg\" style=\"float:right\" />We are proud to establish ourselves among the leaders of market as Steel Flange Manufacturer, Industrial Flanges Suppliers. Stainless Steel Flange available with us and provided at reasonable prices with no quality compromise ensures optimum level of customer satisfaction.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>\r\n\r\n<p><br />\r\n<br />\r\n<br />\r\n<br />\r\n&nbsp;</p>",
+    "image": "",
+    "category": 2,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-10-09T15:15:59.739Z",
+    "updated_at": "2025-10-09T15:15:59.739Z"
+  }
+},
+{
+  "model": "home.product",
+  "pk": 1,
+  "fields": {
+    "name": "Stainless Steel Flexible Hoses",
+    "slug": "stainless-steel-flexible-hoses",
+    "description": "<p>The Stainless Steel Corrugated Hoses are available in stainless steel grades (AISI) 321, 316, 316L, &amp; 304 by forming consolution so that it may conveniently bend while remaining liquid and gas tight. The hoses of specific length as per requirement can be manufactured with the end fittings in Flanged / Threaded types. The Flexible Hose are available in braidings of Stainless Steel wire to take care of external damage and to increase pressure ratings.<br />\r\n<br />\r\n<strong>Flexibility Grades :-</strong><br />\r\ni) Standard Pitch Tubing with Class &#39;B&#39; flexibility as per BS part -1: 2004 / ISO 10380 : 2003. Common applications include fluid transfer for process industries, oil burners, misalignments.<br />\r\n<br />\r\nii) Fine Pitch Hose (Tubing) with maximum flexibility similar to Class C flexibility of BS part -1: 2004 / ISO 10380 : 2003. These are used for the most ardour flexing or high frequency at high temperature and high pressures. The pitch of the hose can be varied to achieve a range of flexibility and pressure rating as required for various application.<br />\r\n<br />\r\nAdvantages of Flexible Metal Hose</p>\r\n\r\n<ul>\r\n\t<li>Suitable for wide temperature range (-270&deg;C to 700&deg;C).</li>\r\n\t<li>It compensates for thermal expansion or contraction in piping system.</li>\r\n\t<li>High physical strength.</li>\r\n\t<li>Good corrosion characteristics.</li>\r\n\t<li>Fire resistant.</li>\r\n\t<li>Moisture resistant.</li>\r\n\t<li>Long life.</li>\r\n\t<li>Resistant to abrasion, penetration and damage.</li>\r\n\t<li>Absorbs or dampers vibration and noise from pumps, compressors, engines and similar Equipment.</li>\r\n\t<li>Connects misaligned rigid piping.</li>\r\n\t<li>Connects moving parts of machinery and equipment.</li>\r\n\t<li>Permits a very economical installation against rigid piping in difficult locations.</li>\r\n</ul>\r\n\r\n<p>Testing Facilites..<br />\r\nwe have comprehensive testing facilities as per BS 6501- Part 1 as well as ISO 10380 standards. Following type of test carrying out at our works:</p>\r\n\r\n<ul>\r\n\t<li>Bend Test</li>\r\n\t<li>Flame Test</li>\r\n\t<li>Hydrostatic test</li>\r\n\t<li>Burst test</li>\r\n</ul>\r\n\r\n<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>Nominal Size (Inch)</th>\r\n\t\t\t<th>N.B. (mm)</th>\r\n\t\t\t<th>Without Braid Max Working (kg/cm&sup2;)</th>\r\n\t\t\t<th>Without Braid Test (kg/cm&sup2;)</th>\r\n\t\t\t<th>Single Braid Max Working (kg/cm&sup2;)</th>\r\n\t\t\t<th>Single Braid Test (kg/cm&sup2;)</th>\r\n\t\t\t<th>Double Braid Max Working (kg/cm&sup2;)</th>\r\n\t\t\t<th>Double Braid Test (kg/cm&sup2;)</th>\r\n\t\t\t<th>Min. Bend Radius Single Static (mm)</th>\r\n\t\t\t<th>Single Dynamic (mm)</th>\r\n\t\t\t<th>Double Static (mm)</th>\r\n\t\t\t<th>Double Dynamic (mm)</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>1/4&quot;</td>\r\n\t\t\t<td>6</td>\r\n\t\t\t<td>4</td>\r\n\t\t\t<td>6</td>\r\n\t\t\t<td>80</td>\r\n\t\t\t<td>120</td>\r\n\t\t\t<td>140</td>\r\n\t\t\t<td>210</td>\r\n\t\t\t<td>30</td>\r\n\t\t\t<td>100</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>120</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>3/8&quot;</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>4</td>\r\n\t\t\t<td>6</td>\r\n\t\t\t<td>70</td>\r\n\t\t\t<td>105</td>\r\n\t\t\t<td>125</td>\r\n\t\t\t<td>180</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>150</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>160</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>1/2&quot;</td>\r\n\t\t\t<td>12</td>\r\n\t\t\t<td>3</td>\r\n\t\t\t<td>4.5</td>\r\n\t\t\t<td>64</td>\r\n\t\t\t<td>64</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>150</td>\r\n\t\t\t<td>44</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>60</td>\r\n\t\t\t<td>220</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>5/8&quot;</td>\r\n\t\t\t<td>16</td>\r\n\t\t\t<td>3</td>\r\n\t\t\t<td>4.5</td>\r\n\t\t\t<td>66</td>\r\n\t\t\t<td>90</td>\r\n\t\t\t<td>90</td>\r\n\t\t\t<td>135</td>\r\n\t\t\t<td>56</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>60</td>\r\n\t\t\t<td>220</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>3/4&quot;</td>\r\n\t\t\t<td>20</td>\r\n\t\t\t<td>2</td>\r\n\t\t\t<td>3</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>75</td>\r\n\t\t\t<td>90</td>\r\n\t\t\t<td>135</td>\r\n\t\t\t<td>70</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>80</td>\r\n\t\t\t<td>250</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>1&quot;</td>\r\n\t\t\t<td>25</td>\r\n\t\t\t<td>2</td>\r\n\t\t\t<td>3</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>75</td>\r\n\t\t\t<td>80</td>\r\n\t\t\t<td>120</td>\r\n\t\t\t<td>90</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>100</td>\r\n\t\t\t<td>260</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>1-1/4&quot;</td>\r\n\t\t\t<td>32</td>\r\n\t\t\t<td>1.5</td>\r\n\t\t\t<td>2.3</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>60</td>\r\n\t\t\t<td>60</td>\r\n\t\t\t<td>90</td>\r\n\t\t\t<td>110</td>\r\n\t\t\t<td>250</td>\r\n\t\t\t<td>120</td>\r\n\t\t\t<td>350</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>1-1/2&quot;</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>1.5</td>\r\n\t\t\t<td>2.3</td>\r\n\t\t\t<td>32</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>75</td>\r\n\t\t\t<td>130</td>\r\n\t\t\t<td>260</td>\r\n\t\t\t<td>160</td>\r\n\t\t\t<td>400</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>2&quot;</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>1</td>\r\n\t\t\t<td>1.5</td>\r\n\t\t\t<td>26</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>40</td>\r\n\t\t\t<td>60</td>\r\n\t\t\t<td>175</td>\r\n\t\t\t<td>350</td>\r\n\t\t\t<td>180</td>\r\n\t\t\t<td>410</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>2-1/2&quot;</td>\r\n\t\t\t<td>65</td>\r\n\t\t\t<td>1</td>\r\n\t\t\t<td>1.5</td>\r\n\t\t\t<td>20</td>\r\n\t\t\t<td>30</td>\r\n\t\t\t<td>32</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>410</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>450</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>3&quot;</td>\r\n\t\t\t<td>80</td>\r\n\t\t\t<td>1</td>\r\n\t\t\t<td>1.5</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>25</td>\r\n\t\t\t<td>25</td>\r\n\t\t\t<td>45</td>\r\n\t\t\t<td>210</td>\r\n\t\t\t<td>450</td>\r\n\t\t\t<td>220</td>\r\n\t\t\t<td>550</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>4&quot;</td>\r\n\t\t\t<td>100</td>\r\n\t\t\t<td>0.8</td>\r\n\t\t\t<td>1.2</td>\r\n\t\t\t<td>14</td>\r\n\t\t\t<td>21</td>\r\n\t\t\t<td>20</td>\r\n\t\t\t<td>30</td>\r\n\t\t\t<td>230</td>\r\n\t\t\t<td>560</td>\r\n\t\t\t<td>260</td>\r\n\t\t\t<td>660</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>5&quot;</td>\r\n\t\t\t<td>125</td>\r\n\t\t\t<td>0.6</td>\r\n\t\t\t<td>0.9</td>\r\n\t\t\t<td>12</td>\r\n\t\t\t<td>12</td>\r\n\t\t\t<td>18</td>\r\n\t\t\t<td>30</td>\r\n\t\t\t<td>230</td>\r\n\t\t\t<td>660</td>\r\n\t\t\t<td>300</td>\r\n\t\t\t<td>815</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>6&quot;</td>\r\n\t\t\t<td>150</td>\r\n\t\t\t<td>0.6</td>\r\n\t\t\t<td>0.9</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>15</td>\r\n\t\t\t<td>15</td>\r\n\t\t\t<td>25</td>\r\n\t\t\t<td>320</td>\r\n\t\t\t<td>815</td>\r\n\t\t\t<td>420</td>\r\n\t\t\t<td>1015</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>8&quot;</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>0.5</td>\r\n\t\t\t<td>0.75</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>15</td>\r\n\t\t\t<td>15</td>\r\n\t\t\t<td>25</td>\r\n\t\t\t<td>410</td>\r\n\t\t\t<td>1015</td>\r\n\t\t\t<td>540</td>\r\n\t\t\t<td>1220</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>10&quot;</td>\r\n\t\t\t<td>250</td>\r\n\t\t\t<td>0.5</td>\r\n\t\t\t<td>0.75</td>\r\n\t\t\t<td>8</td>\r\n\t\t\t<td>12</td>\r\n\t\t\t<td>12</td>\r\n\t\t\t<td>20</td>\r\n\t\t\t<td>560</td>\r\n\t\t\t<td>1220</td>\r\n\t\t\t<td>620</td>\r\n\t\t\t<td>1420</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>12&quot;</td>\r\n\t\t\t<td>300</td>\r\n\t\t\t<td>0.3</td>\r\n\t\t\t<td>0.45</td>\r\n\t\t\t<td>6</td>\r\n\t\t\t<td>9</td>\r\n\t\t\t<td>10</td>\r\n\t\t\t<td>15</td>\r\n\t\t\t<td>660</td>\r\n\t\t\t<td>1430</td>\r\n\t\t\t<td>750</td>\r\n\t\t\t<td>1650</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p><strong>Note :</strong><br />\r\n<strong>&raquo;</strong>&nbsp;The above Technical details are subject to change without notice.<br />\r\n<strong>&raquo;</strong>&nbsp;We can also supply the above Hoses for higher pressures.<br />\r\n<strong>&raquo;</strong>&nbsp;The above values apply only to Braided Hoses and Assemblies at ambient temperature.</p>",
+    "specifications": "",
+    "image": "",
+    "image_url": "https://tiimg.tistatic.com/fp/1/003/873/stainless-steel-corrugated-hose-915.jpg",
+    "price": "9999.00",
+    "category": 1,
+    "status": true,
+    "seo_title": "Stainless Steel Flexible Hoses - Hoses",
+    "seo_description": "The Stainless Steel Corrugated Hoses are available in stainless steel grades (AISI) 321, 316, 316L, &amp; 304 by forming consolution so that it may...",
+    "seo_keywords": "stainless steel flexible hoses, stainless, steel, flexible, hoses, stainless steel, industrial, manufacturer, ISO certified",
+    "og_image": "",
+    "created_at": "2025-11-06T07:27:09.029Z",
+    "updated_at": "2025-11-18T18:55:55.755Z"
+  }
+},
+{
+  "model": "home.product",
+  "pk": 2,
+  "fields": {
+    "name": "Pipe Fittings",
+    "slug": "pipe-fittings",
+    "description": "<p>Pipe fitting is the occupation of installing or repairing piping or tubing systems that convey liquid, gas, and occasionally solid materials. This work involves selecting and preparing pipe or tubing, joining it together by various means, and the location and repair of leaks.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>",
+    "specifications": null,
+    "image": "products/Pipe-Fittings.jpg",
+    "image_url": null,
+    "price": "9999.00",
+    "category": 2,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-11-10T11:22:59.373Z",
+    "updated_at": "2025-11-10T11:28:26.425Z"
+  }
+},
+{
+  "model": "home.product",
+  "pk": 3,
+  "fields": {
+    "name": "Buttweld Fittings",
+    "slug": "buttweld-fittings",
+    "description": "<p>We manufacture and design butt weld fittings in various designs and specifications for different requirements of our clients. Manufactured using quality material and sophisticated machines, our range of butt weld fittings is known for its high quality, zero-defects and superior performance.<br />\r\n<br />\r\nWe offer these fittings in various shapes such as elbow, tee, reducer, return bends, stub-ends, cap, collar, cross, insert and more. The company has gained expertise in offering fittings with polish &amp; electro polishing and has the capability to manufacture fittings as per drawings.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>",
+    "specifications": null,
+    "image": "products/Buttweld-Fittings.jpg",
+    "image_url": null,
+    "price": "9999.00",
+    "category": 2,
+    "status": true,
+    "seo_title": null,
+    "seo_description": "",
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-11-10T11:28:52.586Z",
+    "updated_at": "2025-11-18T17:19:17.601Z"
+  }
+},
+{
+  "model": "home.product",
+  "pk": 4,
+  "fields": {
+    "name": "Flanges",
+    "slug": "flanges",
+    "description": "<p>We are proud to establish ourselves among the leaders of market as Steel Flange Manufacturer, Industrial Flanges Suppliers. Stainless Steel Flange available with us and provided at reasonable prices with no quality compromise ensures optimum level of customer satisfaction.<br />\r\n<br />\r\nFittings are manufactured to DIN/IS/SAE/BS/ANSI Standards and to customers requirements.</p>",
+    "specifications": null,
+    "image": "products/Flanges.jpg",
+    "image_url": null,
+    "price": "9999.00",
+    "category": 2,
+    "status": true,
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_image": "",
+    "created_at": "2025-11-10T11:29:11.124Z",
+    "updated_at": "2025-11-10T11:29:11.124Z"
+  }
+},
+{
+  "model": "home.product",
+  "pk": 5,
+  "fields": {
+    "name": "Braided Hose Pump Connector",
+    "slug": "braided-hose-pump-connector",
+    "description": "<p>Braided Hose Pump Connector</p>\r\n\r\n<p>We manufactured various types of Stainless Steel Braided Flexible Pump Connectors.</p>\r\n\r\n<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th><strong>Hose Material</strong></th>\r\n\t\t\t<th><strong>Braid Material</strong></th>\r\n\t\t\t<th><strong>Hose Size</strong></th>\r\n\t\t\t<th><strong>Hose Length (Overall)</strong></th>\r\n\t\t\t<th><strong>End Fittings</strong></th>\r\n\t\t\t<th><strong>End Fittings Material</strong></th>\r\n\t\t\t<th><strong>Working Pressure</strong></th>\r\n\t\t\t<th><strong>Offset Motion (Static)</strong></th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Stainless Steel AISI 304 / 321 / 316</td>\r\n\t\t\t<td>Stainless Steel AISI 304 (Single / Double Braid)</td>\r\n\t\t\t<td>DN 25 (1&quot; NB) to DN 300 (12&quot; NB)</td>\r\n\t\t\t<td>As per customer requirement</td>\r\n\t\t\t<td>Flanges &ndash; Fixed / Floating (Class #150, #300, PN10, PN40)</td>\r\n\t\t\t<td>CS / AISI 304 / 316 / 316L</td>\r\n\t\t\t<td>110 PSI to 510 PSI</td>\r\n\t\t\t<td>3/4&quot; to 1/4&quot;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+    "specifications": "",
+    "image": "",
+    "image_url": "https://www.steelhosepipes.com/images/braided.jpg",
+    "price": "0.00",
+    "category": 1,
+    "status": true,
+    "seo_title": "Braided Hose Pump Connector - Hoses",
+    "seo_description": "&nbsp; Braided Hose Pump Connector We manufactured various types of Stainless Steel Braided Flexible Pump Connectors. Hose Material Braid Material Hose Size...",
+    "seo_keywords": "braided hose pump connector, braided, hose, pump, connector, hoses, stainless steel, industrial, manufacturer, ISO certified",
+    "og_image": "",
+    "created_at": "2025-11-18T18:57:40.801Z",
+    "updated_at": "2025-11-18T18:58:03.789Z"
+  }
+},
+{
+  "model": "home.pagecontent",
+  "pk": 1,
+  "fields": {
+    "page_type": "about_us",
+    "title": "About Us",
+    "content": "<p>We are a trusted manufacturer and supplier of a wide range of <strong>stainless steel hoses and hose assemblies</strong>, offering sizes from <strong>&frac14;&rdquo; ID to 12&rdquo; ID</strong> in <strong>AISI 304, 321, 316, and 316L</strong> grades. Each hose can be customized with <strong>mounting fittings</strong> and end connections tailored to meet specific customer requirements.</p>\r\n\r\n<p>Our expertise covers <strong>Stainless Steel Corrugated Hoses</strong>, <strong>Interlock Hoses</strong>, <strong>Flexible Pump Connectors</strong>, <strong>Metallic Bellows and Expansion Joints</strong>, <strong>Hydraulic &amp; Rubber Hose Assemblies</strong>, <strong>Teflon Hose Assemblies</strong>, and a full range of <strong>Hose End and Pipe Fittings</strong>.</p>\r\n\r\n<p>With a strong commitment to <strong>quality, precision, and customer satisfaction</strong>, we have earned recognition as a reliable name in the industry. We continuously evolve to meet changing market demands and strive to deliver <strong>world-class products and services</strong> to our global clientele.</p>\r\n\r\n<p>Our <strong>manufacturing facility</strong>, located in <strong>Bahadurgarh (Haryana), near Delhi</strong>, is equipped with advanced machinery and comprehensive testing facilities, including <strong>Hydrostatic and Pneumatic Leak Detection Tests</strong>. Every product undergoes stringent quality checks to ensure reliability and safety under demanding industrial conditions.</p>\r\n\r\n<p>Our <strong>Stainless Steel Flexible Hoses</strong> and assemblies are widely used across industries such as <strong>Refineries, Chemical Plants, Power Plants, Steel Plants, Paper Mills</strong>, and other industrial setups where the transfer of <strong>fluids, gases, and steam</strong> is critical.</p>",
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_title": null,
+    "og_description": null,
+    "og_image": "",
+    "twitter_card_type": "summary_large_image",
+    "twitter_title": null,
+    "twitter_description": null,
+    "twitter_image": "",
+    "status": true,
+    "created_at": "2025-10-10T06:21:05.343Z",
+    "updated_at": "2025-10-10T06:21:05.343Z"
+  }
+},
+{
+  "model": "home.pagecontent",
+  "pk": 3,
+  "fields": {
+    "page_type": "privacy_policy",
+    "title": "Privacy Policy",
+    "content": "<h2><strong>1. Introduction</strong></h2>\r\n\r\n<p>At <strong>INOXFLEX</strong>, we value your privacy and are committed to protecting your personal information.<br />\r\nThis Privacy Policy explains how we collect, use, and safeguard your data when you visit or interact with our website I<strong>NOXFLEX.com</strong>.<br />\r\nBy using our website, you agree to the terms outlined below.</p>\r\n\r\n<hr />\r\n<h3><strong>2. Information We Collect</strong></h3>\r\n\r\n<p>We may collect the following types of information from you:</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p><strong>Personal Information</strong>: Name, company name, email address, phone number, and any details you provide through our contact or enquiry forms.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p><strong>Business Information</strong>: Product requirements, specifications, or project-related details shared during quotation requests or correspondence.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p><strong>Technical Information</strong>: Browser type, device type, IP address, and pages visited on our website (collected automatically via cookies or analytics tools).</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>3. How We Use Your Information</strong></h3>\r\n\r\n<p>We use the collected data for the following purposes:</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>To respond to your product or service enquiries.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>To process quotations, orders, and deliveries.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>To improve our website, services, and customer experience.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>To send you updates, offers, or technical information (only if you&rsquo;ve opted in).</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>To comply with legal obligations or resolve disputes.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<p>We do <strong>not</strong> sell, rent, or share your personal information with third parties for marketing purposes.</p>\r\n\r\n<hr />\r\n<h3><strong>4. Data Security</strong></h3>\r\n\r\n<p>We implement appropriate technical and organizational measures to protect your data against unauthorized access, loss, misuse, or alteration.<br />\r\nHowever, while we strive for complete security, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute protection.</p>\r\n\r\n<hr />\r\n<h3><strong>5. Cookies</strong></h3>\r\n\r\n<p>Our website may use cookies to enhance your browsing experience.<br />\r\nCookies help us analyze website traffic, remember preferences, and improve site functionality.<br />\r\nYou can disable cookies in your browser settings, but some parts of the site may not function properly as a result.</p>\r\n\r\n<hr />\r\n<h3><strong>6. Data Retention</strong></h3>\r\n\r\n<p>We retain your personal data only as long as necessary to fulfill the purpose for which it was collected or as required by law.<br />\r\nAfter that period, your data will be securely deleted or anonymized.</p>\r\n\r\n<hr />\r\n<h3><strong>7. Third-Party Links</strong></h3>\r\n\r\n<p>Our website may contain links to external websites.<br />\r\nWe are not responsible for the privacy practices or content of those sites.<br />\r\nWe encourage users to review the privacy policies of any third-party websites they visit.</p>\r\n\r\n<hr />\r\n<h3><strong>8. Your Rights</strong></h3>\r\n\r\n<p>You have the right to:</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Request access to your personal data we hold.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Request correction or deletion of inaccurate information.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Withdraw consent for data processing at any time.<br />\r\n\tTo exercise these rights, please contact us at <strong>[your contact email]</strong>.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>9. Policy Updates</strong></h3>\r\n\r\n<p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements.<br />\r\nAll updates will be posted on this page with a revised &ldquo;Last Updated&rdquo; date.</p>\r\n\r\n<hr />\r\n<h3><strong>10. Contact Us</strong></h3>\r\n\r\n<p>If you have any questions or concerns about this Privacy Policy or how we handle your data, please contact us at:</p>\r\n\r\n<p><strong>INOXFLEX</strong><br />\r\n[Bahadurgarh (Haryana), India]<br />\r\n📧 <strong>Email:</strong> [your email address]<br />\r\n📞 <strong>Phone:</strong> [your contact number]</p>",
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_title": null,
+    "og_description": null,
+    "og_image": "",
+    "twitter_card_type": "summary_large_image",
+    "twitter_title": null,
+    "twitter_description": null,
+    "twitter_image": "",
+    "status": true,
+    "created_at": "2025-10-10T06:23:55.079Z",
+    "updated_at": "2025-11-05T15:36:21.432Z"
+  }
+},
+{
+  "model": "home.pagecontent",
+  "pk": 2,
+  "fields": {
+    "page_type": "terms_conditions",
+    "title": "Terms & Conditions",
+    "content": "<h2><strong>1. Introduction</strong></h2>\r\n\r\n<p>Welcome to <strong>INOXFLEX</strong>&nbsp;(&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). By accessing or using our website <strong>INOXFLEX.COM</strong>, you agree to comply with and be bound by these Terms &amp; Conditions.<br />\r\nIf you do not agree with any part of these terms, please refrain from using our website.</p>\r\n\r\n<hr />\r\n<h3><strong>2. Products and Services</strong></h3>\r\n\r\n<p>We are engaged in the <strong>manufacturing and supply of stainless steel hoses, hose assemblies, pipe fittings, and related industrial products</strong>.<br />\r\nAll product descriptions, technical specifications, and images on the website are provided for general information and may be subject to change without prior notice.</p>\r\n\r\n<hr />\r\n<h3><strong>3. Orders and Pricing</strong></h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>All quotations and prices are subject to confirmation and may vary depending on material costs and market fluctuations.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Orders will be processed only after written confirmation and receipt of any applicable advance payment.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Taxes, duties, and freight charges (if applicable) will be borne by the buyer unless otherwise agreed upon in writing.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>We reserve the right to refuse or cancel any order at our discretion.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>4. Delivery and Shipping</strong></h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Delivery timelines are estimated and may vary depending on production schedules and logistics conditions.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>We are not liable for delays caused by transportation issues, raw material shortages, natural disasters, or any other force majeure circumstances.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Risk and ownership of goods are transferred to the buyer upon dispatch from our facility.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>5. Warranty &amp; Liability</strong></h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Our products are warranted against manufacturing defects for a limited period, as specified in our quotation or invoice.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>The warranty does not cover damage due to improper installation, misuse, or modifications by third parties.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Our liability is limited strictly to the repair or replacement of defective items.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>We are not responsible for any indirect, incidental, or consequential damages arising from product use or failure.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>6. Returns &amp; Replacements</strong></h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Returns are accepted only after prior approval from our authorized representative.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Returned goods must be unused, in original condition, and sent at the buyer&rsquo;s cost unless otherwise agreed.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Replacement or refund will be processed only after inspection and confirmation of defect or discrepancy.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<hr />\r\n<h3><strong>7. Intellectual Property</strong></h3>\r\n\r\n<p>All content on this website &mdash; including text, images, logos, product designs, and graphics &mdash; is the intellectual property of <strong>INOXFLEX</strong>.<br />\r\nUnauthorized use, reproduction, or distribution of any material without prior written consent is strictly prohibited.</p>\r\n\r\n<hr />\r\n<h3><strong>8. Privacy Policy</strong></h3>\r\n\r\n<p>We respect your privacy and handle your personal data as per our <strong>Privacy Policy</strong>.<br />\r\nBy using our website, you consent to the collection and use of information as described in that policy.</p>\r\n\r\n<hr />\r\n<h3><strong>9. Governing Law &amp; Jurisdiction</strong></h3>\r\n\r\n<p>These Terms &amp; Conditions shall be governed by and construed in accordance with the <strong>laws of India</strong>.<br />\r\nAny disputes arising shall fall under the exclusive jurisdiction of the <strong>courts in Delhi, India</strong>.</p>\r\n\r\n<hr />\r\n<h3><strong>10. Amendments</strong></h3>\r\n\r\n<p>We reserve the right to modify, update, or change these Terms &amp; Conditions at any time without prior notice.<br />\r\nUsers are encouraged to review this page periodically for any updates.</p>",
+    "seo_title": null,
+    "seo_description": null,
+    "seo_keywords": null,
+    "og_title": null,
+    "og_description": null,
+    "og_image": "",
+    "twitter_card_type": "summary_large_image",
+    "twitter_title": null,
+    "twitter_description": null,
+    "twitter_image": "",
+    "status": true,
+    "created_at": "2025-10-10T06:22:41.939Z",
+    "updated_at": "2025-11-05T15:36:43.162Z"
+  }
+},
+{
+  "model": "home.teammember",
+  "pk": 1,
+  "fields": {
+    "first_name": "Harish",
+    "last_name": "Rawat",
+    "role": "Founder & CEO",
+    "description": "Founder",
+    "facebook_url": null,
+    "twitter_url": null,
+    "linkedin_url": null,
+    "instagram_url": null,
+    "order": 1,
+    "status": true,
+    "created_at": "2025-11-18T17:00:10.107Z",
+    "updated_at": "2025-11-18T17:00:10.107Z"
+  }
+},
+{
+  "model": "home.teammember",
+  "pk": 2,
+  "fields": {
+    "first_name": "Shubham",
+    "last_name": "Rohilla",
+    "role": "Partner",
+    "description": "Partner",
+    "facebook_url": null,
+    "twitter_url": null,
+    "linkedin_url": null,
+    "instagram_url": null,
+    "order": 2,
+    "status": true,
+    "created_at": "2025-11-18T17:00:35.307Z",
+    "updated_at": "2025-11-18T17:00:35.307Z"
+  }
+},
+{
+  "model": "home.sitesettings",
+  "pk": 1,
+  "fields": {
+    "phone_number": "+918750971212",
+    "whatsapp_number": null,
+    "email": "inoxflex10@gmail.com",
+    "address": "417/21, Nehru Park, Old DSP Street, Bahadurgarh",
+    "facebook_url": "http://facebook.com",
+    "youtube_url": "http://youtube.com",
+    "instagram_url": "http://instagram.com",
+    "twitter_url": null,
+    "linkedin_url": null,
+    "default_seo_title": "Inox Flex - Stainless Steel Hoses & Pipe Fittings",
+    "default_seo_description": "Leading manufacturer and exporter of Stainless Steel Corrugated Hoses, Hose Assemblies, Metallic Bellows, Expansion Joints, and Pipe Fittings.",
+    "default_seo_keywords": "stainless steel hoses, pipe fittings, corrugated hoses, expansion joints, metallic bellows",
+    "site_name": "Inox Flex",
+    "og_image_default": "",
+    "twitter_handle": null,
+    "created_at": "2025-11-10T18:04:14.241Z",
+    "updated_at": "2025-11-18T17:01:42.304Z"
+  }
+}
+]

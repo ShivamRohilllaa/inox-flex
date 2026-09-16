@@ -71,15 +71,15 @@
                     </div>
                     <div class="de-flex-col header-col-mid">
                         <ul id="mainmenu">
-                            <li><a class="menu-item" href="{% url 'homepage' %}">Home</a></li>
+                            <li><a class="menu-item{% if request.resolver_match.url_name == 'homepage' %} is-active{% endif %}" {% if request.resolver_match.url_name == 'homepage' %}aria-current="page"{% endif %} href="{% url 'homepage' %}">Home</a></li>
                             
                             <!-- Dynamic Categories with Products -->
                             {% for category in categories %}
-                            <li><a class="menu-item" href="{% url 'category_detail' slug=category.slug %}">{{ category.name }}</a>
+                            <li><a class="menu-item{% if request.resolver_match.kwargs.slug == category.slug or request.resolver_match.kwargs.category_slug == category.slug %} is-active{% endif %}" {% if request.resolver_match.kwargs.slug == category.slug %}aria-current="page"{% endif %} href="{% url 'category_detail' slug=category.slug %}">{{ category.name }}</a>
                                 {% if category.products.all %}
                                 <ul>
                                     {% for product in category.products.all|slice:":6" %}
-                                    <li><a class="menu-item" href="{% url 'product_detail' category_slug=category.slug product_slug=product.slug %}">{{ product.name }}</a></li>
+                                    <li><a class="menu-item{% if request.resolver_match.kwargs.product_slug == product.slug and request.resolver_match.kwargs.category_slug == category.slug %} is-active{% endif %}" {% if request.resolver_match.kwargs.product_slug == product.slug and request.resolver_match.kwargs.category_slug == category.slug %}aria-current="page"{% endif %} href="{% url 'product_detail' category_slug=category.slug product_slug=product.slug %}">{{ product.name }}</a></li>
                                     {% endfor %}
                                     {% if category.products.count > 6 %}
                                     <li><a class="menu-item fw-bold" href="{% url 'category_detail' slug=category.slug %}">View All {{ category.name }} →</a></li>
@@ -90,9 +90,9 @@
                             {% endfor %}
                             
                             <!-- Static Menu Items -->
-                            <li><a class="menu-item" href="{% url 'product_list' %}">Our Products</a></li>
-                            <li><a class="menu-item" href="{% url 'about' %}">About Us</a></li>
-                            <li><a class="menu-item" href="{% url 'contact' %}">Contact</a></li>
+                            <li><a class="menu-item{% if request.resolver_match.url_name == 'product_list' %} is-active{% endif %}" {% if request.resolver_match.url_name == 'product_list' %}aria-current="page"{% endif %} href="{% url 'product_list' %}">Our Products</a></li>
+                            <li><a class="menu-item{% if request.resolver_match.url_name == 'about' %} is-active{% endif %}" {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %} href="{% url 'about' %}">About Us</a></li>
+                            <li><a class="menu-item{% if request.resolver_match.url_name == 'contact' %} is-active{% endif %}" {% if request.resolver_match.url_name == 'contact' %}aria-current="page"{% endif %} href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="de-flex-col">
